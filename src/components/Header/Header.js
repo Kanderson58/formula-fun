@@ -1,20 +1,22 @@
 import './Header.css'
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import f1header from '../../images/f1header.png';
 
 const Header = () => {
+  const [selected, setSelected] = useState('/');
   const dropdown = <span className="material-symbols-outlined expand">expand_more</span>
 
   return (
     <header>
-      <Link to='/' className='title'>
+      <Link to='/' className='title' onClick={() => setSelected('/')}>
         <img src={f1header} alt='Formula Fun' className='header-img'/>
         <em className='motto'>For those of us who wheel never get tire-d of Formula One!</em>
       </Link>
       <nav>
-        <Link to='/' className='nav-link'>HOME{useLocation().pathname !== '/' ? dropdown : null}</Link>
-        <Link to='/team' className='nav-link'>MY TEAM{useLocation().pathname !== '/team' ? dropdown : null}</Link>
-        <Link to='/drivers' className='nav-link'>DRIVER STATS{useLocation().pathname !== '/drivers' ? dropdown : null}</Link>
+        <Link to='/' onClick={() => setSelected('/')} className={`nav-link ${selected === '/' ? 'selected' : null}`}> HOME{selected !== '/' ? dropdown : null} </Link>
+        <Link to='/team' onClick={() => setSelected('/team')} className={`nav-link ${selected === '/team' ? 'selected' : null}`}> MY TEAM{selected !== '/team' ? dropdown : null} </Link>
+        <Link to='/drivers' onClick={() => setSelected('/drivers')} className={`nav-link ${selected === '/drivers' ? 'selected' : null}`}> DRIVER STATS{selected !== '/drivers' ? dropdown : null} </Link>
       </nav>
     </header>
   )

@@ -43,3 +43,11 @@ nav {
   align-items: center;
   padding: 2%;
 }
+
+.nav-link:hover {
+  background-color: #a00500;
+}
+
+.selected {
+  background-color: #6d0400;
+}
