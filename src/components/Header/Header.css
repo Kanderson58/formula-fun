@@ -1,0 +1,45 @@
+header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  background-color: #2e3840;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: .6%;
+}
+
+.header-img {
+  margin: 0;
+  padding-left: 1.8%;
+  height: 40px;
+}
+
+.motto {
+  padding-right: 2%;
+  font-weight: 100;
+  font-size: 10pt;
+  color: rgb(195, 195, 195);
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'formula1-display-bold', sans-serif;
+}
+
+nav {
+  background-color: #e10600;
+  height: 50%;
+  display: flex;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 2%;
+}
