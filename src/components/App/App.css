@@ -34,3 +34,7 @@ ul {
 .pointer-event {
   pointer-events: none;
 }
+
+.material-symbols-outlined {
+  cursor: pointer;
+}
