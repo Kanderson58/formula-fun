@@ -21,4 +21,23 @@ const sampleCleanedDrivers = [
   {name: 'Nikita Mazepin', position: 20, points: 0}
 ]
 
-export default sampleCleanedDrivers
+const sampleSingleDriver = [
+  {
+    name: 'Max Verstappen',
+    firstName: 'Max',
+    image: "https://media-3.api-sports.io/formula-1/drivers/25.png",
+    number: 1,
+    careerPoints: "2080.5",
+    birthday: '1997-09-30',
+    birthplace: "Hasselt, Belgium",
+    country: 'Netherlands',
+    totalRaces: 166,
+    totalPodiums: 80,
+    totalTeams: 9,
+    highestFinish: 1,
+    numHighest: 37,
+    worldChamp: 2
+  }
+]
+
+export { sampleCleanedDrivers, sampleSingleDriver }

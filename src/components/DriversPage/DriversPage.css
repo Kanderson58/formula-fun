@@ -1,12 +1,12 @@
 .drivers-page {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
   font-size: 30pt;
   background-image: url('../../images/checkeredflag.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 2% 0 0 0;
 }
 
 h3 {
@@ -21,10 +21,10 @@ h3 {
 
 .full-rankings {
   border: 3px solid black;
-  width: 35%;
+  width: 40%;
   height: 640px;
   overflow-y: scroll;
-  margin: 2% 5%;
+  margin: 2% 3%;
 }
 
 .ranked-driver {
@@ -48,29 +48,6 @@ h3 {
 
 .driver-arrow {
   font-size: 30pt;
-}
-
-.selected-driver {
-  height: 500px;
-  width: 50%;
-  margin: 2.5% 0;
-  background-color: rgba(54, 54, 54, 0.59);
-  position: relative;
-  box-shadow: 0 0 150px rgb(53, 53, 53) inset;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.driver-info {
-  margin: 3% 5%;
-  position: absolute;
-  z-index: 1;
-  text-shadow: 5px 5px 5px black;
-  color: white;
-}
-
-.selected-driver-img {
-  opacity: 50%;
 }
 
 .points {
