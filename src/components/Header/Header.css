@@ -29,7 +29,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'formula1-display-bold', sans-serif;
+  font-family:  Helvetica, sans-serif;
 }
 
 nav {

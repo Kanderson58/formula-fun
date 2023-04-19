@@ -1,5 +1,5 @@
 import './App.css'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import Header from "../Header/Header";
 import RacePage from '../RacePage/RacePage';
 import TeamPage from '../TeamPage/TeamPage';
@@ -8,7 +8,7 @@ import DriversPage from '../DriversPage/DriversPage';
 const App = () => {
   return (
     <div>
-      <Header />
+      <Header path={useLocation().pathname} />
       <main>
         <Switch>
         <Route exact path='/'> <RacePage /> </Route>

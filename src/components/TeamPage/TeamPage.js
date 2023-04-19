@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import './TeamPage.css'
 
 const TeamPage = () => {
   return (
     <section className='team-page'>
-      This is your team page!
+      <section className='drivers'>
+        <div className='driver'>Driver 1</div>
+        <div className='driver'>Driver 2</div>
+      </section>
+      <div className='team'>Team</div>
     </section>
   )
 }
