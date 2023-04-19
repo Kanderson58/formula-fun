@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+}
+
+body {  
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
+}
+
+main {
+  margin-top: 110px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  width: fit-content;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

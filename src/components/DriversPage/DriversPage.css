@@ -1,0 +1,61 @@
+.drivers-page {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30pt;
+  background-image: url('../../images/checkeredflag.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.full-rankings {
+  border: 3px solid black;
+  width: 30%;
+  height: 640px;
+  overflow-y: scroll;
+  margin: 2% 5%;
+}
+
+.ranked-driver {
+  cursor: pointer;
+  border: 2px black solid;
+  margin: 0;
+  padding: 2%;
+  background-color: rgba(54, 54, 54, 0.59);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chosen-driver {
+  background-color: rgba(0, 0, 0, 0.624);
+}
+
+.driver-arrow {
+  font-size: 30pt;
+}
+
+.selected-driver {
+  height: 500px;
+  width: 55%;
+  margin: 2.5% 0;
+  background-color: rgba(54, 54, 54, 0.59);
+  position: relative;
+  box-shadow: 0 0 150px rgb(53, 53, 53) inset;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.driver-info {
+  margin: 3% 5%;
+  position: absolute;
+  z-index: 1;
+  text-shadow: 5px 5px 5px black;
+  color: white;
+}
+
+.selected-driver-img {
+  opacity: 50%;
+}
