@@ -1,5 +1,5 @@
 import './Header.css'
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import f1header from '../../images/f1header.png';
 
@@ -9,7 +9,7 @@ const Header = ({path}) => {
 
   useEffect(() => {
     setSelected(path);
-  })
+  }, [path])
 
   return (
     <header>

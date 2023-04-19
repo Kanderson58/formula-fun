@@ -1,10 +1,18 @@
 import { useState } from 'react';
 import './DriversPage.css';
 
-const DriversPage = () => {
-  const [chosenDriver, setChosenDriver] = useState('1');
-  const [allDrivers, setAllDrivers] = useState(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']);
-  const allDriversJSX = allDrivers.map(driver => <p className={`ranked-driver ${chosenDriver === driver && 'chosen-driver'}`} id={`${driver}`} key={`${driver}`} onClick={(e) => setChosenDriver(e.target.id)}>Driver {`${driver}`}{chosenDriver === driver && <span className="material-symbols-outlined driver-arrow">arrow_circle_right</span>}</p>)
+const DriversPage = ({allDrivers}) => {
+  console.log('uhh', allDrivers)
+  const [chosenDriver, setChosenDriver] = useState(1);
+
+  const allDriversJSX = allDrivers.map(driver => 
+    <p className={`ranked-driver ${chosenDriver === driver && 'chosen-driver'}`} 
+      id={`${driver.position}`} 
+      key={`${driver.name}`} 
+      onClick={(e) => setChosenDriver(e.target.id)}>
+        {driver.position}) {driver.name} - {driver.points} points
+        {chosenDriver === driver && <span className="material-symbols-outlined driver-arrow">arrow_circle_right</span>}
+    </p>)
 
   return (
     <section className='drivers-page'>

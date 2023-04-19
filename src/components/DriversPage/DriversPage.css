@@ -18,6 +18,7 @@
 }
 
 .ranked-driver {
+  font-size: 20pt;
   cursor: pointer;
   border: 2px black solid;
   margin: 0;

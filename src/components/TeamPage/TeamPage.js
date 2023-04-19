@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './TeamPage.css'
 
 const TeamPage = () => {
@@ -21,14 +20,14 @@ const TeamPage = () => {
         </div>
       </section>
       <div className='team'>
-        <p className='team-info'>
+        <div className='team-info'>
           <h2>Team Name</h2>
           <ul>
             <li>Team ranking</li>
             <li>Team win percentage</li>
             <li>Etc etc</li>
           </ul>
-        </p>
+        </div>
         <section className='race-result'>Race 1 Result</section>
         <section className='race-result'>Race 2 Result</section>
         <section className='race-result'>Race 3 Result</section>
