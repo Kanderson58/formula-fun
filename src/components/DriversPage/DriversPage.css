@@ -9,16 +9,28 @@
   background-size: cover;
 }
 
+h3 {
+  background-color: rgba(0, 0, 0, 0.799);
+  margin: 0;
+  padding: 3% 0;
+  text-align: center;
+  text-shadow: 3px 3px 0px #e00400;
+  color: white;
+  border: 2px solid black;
+}
+
 .full-rankings {
   border: 3px solid black;
-  width: 30%;
+  width: 35%;
   height: 640px;
   overflow-y: scroll;
   margin: 2% 5%;
 }
 
 .ranked-driver {
+  height: 50px;
   font-size: 20pt;
+  font-weight: 100;
   cursor: pointer;
   border: 2px black solid;
   margin: 0;
@@ -40,7 +52,7 @@
 
 .selected-driver {
   height: 500px;
-  width: 55%;
+  width: 50%;
   margin: 2.5% 0;
   background-color: rgba(54, 54, 54, 0.59);
   position: relative;
@@ -59,4 +71,9 @@
 
 .selected-driver-img {
   opacity: 50%;
+}
+
+.points {
+  font-family: Helvetica, sans-serif;
+  font-size: 15pt;
 }

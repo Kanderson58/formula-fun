@@ -1,7 +1,5 @@
 import './App.css'
-import { useState, useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
-import { cleanDriverData } from '../../utilities.js';
 import Header from "../Header/Header";
 import RacePage from '../RacePage/RacePage';
 import TeamPage from '../TeamPage/TeamPage';
@@ -14,22 +12,14 @@ import DriversPage from '../DriversPage/DriversPage';
 // rearrange the standings accordingly
 
 const App = () => {
-  const [allDrivers, setAllDrivers] = useState();
-
-  useEffect(() => {
-    setAllDrivers(cleanDriverData())
-    // cleanDriverData().then(data => setAllDrivers(data))
-  }, [])
-
   return (
     <div>
-      {console.log(allDrivers)}
       <Header path={useLocation().pathname} />
       <main>
         <Switch>
         <Route exact path='/'> <RacePage /> </Route>
         <Route path='/team'> <TeamPage /> </Route>
-        <Route path='/drivers'> <DriversPage allDrivers={allDrivers} /> </Route>
+        <Route path='/drivers'> <DriversPage /> </Route>
         </Switch>
       </main>
     </div>

@@ -1,7 +1,6 @@
 import sampleDriver from "./sampleData"
 
-export const getSeason = () => { 
-  // don't forget to put back async
+export const getSeason = async() => { 
 //   const result = await fetch('https://v1.formula-1.api-sports.io/rankings/drivers?season=2021', {
 //   headers: {
 //     'x-apisports-key': 'fbb044d1ec06d67febe82ad0fecb8ff5',
@@ -10,5 +9,4 @@ export const getSeason = () => {
 // })
 //   const drivers = await result.json();
 //   return drivers
-  return sampleDriver;
 }

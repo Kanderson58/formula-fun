@@ -1,4 +1,5 @@
 import { getSeason } from "./apiCalls";
+import sampleCleanedDrivers from "./sampleData";
 
 export const cleanDriverData = () => {
   // return getSeason().then(data => {
@@ -6,15 +7,9 @@ export const cleanDriverData = () => {
   //     return {
   //       name: driver.driver.name,
   //       position: driver.position,
-  //       points: driver.points
+  //       points: driver.points ? driver.points : 0
   //     }
   //   })
   // });
-  return getSeason().map(driver => {
-    return {
-      name: driver.driver.name,
-      position: driver.position,
-      points: driver.points
-    }
-  })
+  return sampleCleanedDrivers
 }
