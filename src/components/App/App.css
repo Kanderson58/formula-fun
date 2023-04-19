@@ -1,16 +1,21 @@
-body {
+html {
+  height: 100%;
+}
+
+body {  
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 900;
 }
 
 main {
-  margin-top: 115px;
+  margin-top: 110px;
 }
 
 button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 a {

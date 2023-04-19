@@ -18,9 +18,9 @@ const Header = ({path}) => {
         <em className='motto'>For those of us who wheel never get tire-d of Formula One!</em>
       </Link>
       <nav>
-        <Link to='/' className={`nav-link ${selected === '/' ? 'selected' : null}`}> HOME{selected !== '/' ? expand : null} </Link>
-        <Link to='/team' className={`nav-link ${selected === '/team' ? 'selected' : null}`}> MY TEAM{selected !== '/team' ? expand : null} </Link>
-        <Link to='/drivers' className={`nav-link ${selected === '/drivers' ? 'selected' : null}`}> DRIVER STATS{selected !== '/drivers' ? expand : null} </Link>
+        <Link to='/' className={`nav-link ${selected === '/' && 'selected'}`}> HOME{selected !== '/' && expand} </Link>
+        <Link to='/team' className={`nav-link ${selected === '/team' && 'selected'}`}> MY TEAM{selected !== '/team' && expand} </Link>
+        <Link to='/drivers' className={`nav-link ${selected === '/drivers' && 'selected'}`}> DRIVER STATS{selected !== '/drivers' && expand} </Link>
       </nav>
     </header>
   )
