@@ -1,27 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { cleanDriverData } from '../../utilities.js';
+import Driver from '../Driver/Driver.js';
 import './DriversPage.css';
 
 const DriversPage = () => {
-  const [chosenDriver, setChosenDriver] = useState('1');
-  const [allDrivers, setAllDrivers] = useState(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']);
-  const allDriversJSX = allDrivers.map(driver => <p className={`ranked-driver ${chosenDriver === driver && 'chosen-driver'}`} id={`${driver}`} key={`${driver}`} onClick={(e) => setChosenDriver(e.target.id)}>Driver {`${driver}`}{chosenDriver === driver && <span className="material-symbols-outlined driver-arrow">arrow_circle_right</span>}</p>)
+  const [chosenDriver, setChosenDriver] = useState();
+  const [allDrivers, setAllDrivers] = useState([]);
+
+  useEffect(() => {
+    setAllDrivers(cleanDriverData());
+    // cleanDriverData().then(data => setAllDrivers(data))
+  }, [])
+
+  const allDriversJSX = allDrivers.map(driver => 
+    <div className={`ranked-driver ${chosenDriver === driver.position && 'chosen-driver pointer-event'}`} 
+      id={`${driver.position}`} 
+      key={`${driver.position}`} 
+      onClick={(e) => setChosenDriver(parseInt(e.target.id))}
+      >
+        <p className='pointer-event'>{driver.position}) {driver.name}</p><p className='pointer-event points'> {driver.points} points</p>
+        {chosenDriver === driver.position && <span className="material-symbols-outlined driver-arrow">arrow_circle_right</span>}
+    </div>);
 
   return (
     <section className='drivers-page'>
       <div className='full-rankings'>
+        <h3>SEASON RANKINGS</h3>
         {allDriversJSX}
       </div>
-      <div className='selected-driver'>
-        <ul className='driver-info'>
-          <li>Driver name</li>
-          <li>Info that can go right on over this guy's head whenever we need it to</li>
-        </ul>
-        <img 
-          src='https://e7.pngegg.com/pngimages/220/542/png-clipart-silhouette-man-silhouette-animals-silhouette-thumbnail.png' 
-          className='selected-driver-img' 
-          alt='example driver'
-        />
-      </div>
+      {chosenDriver ? <Driver chosenDriver={allDrivers.find(driver => driver.position === chosenDriver)}/> : <p className='selected-driver no-driver'>Click on a driver <br/> to see their stats!</p>}
     </section>
   )
 }
