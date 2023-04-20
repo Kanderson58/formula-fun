@@ -10,9 +10,8 @@ h2 {
 }
 
 .team-header {
-  width: 93%;
-  height: fit-content;
-  padding: 3% 3% 2% 3%;
+  padding: 3% 5% 2%;
+  margin: 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,6 +26,11 @@ h2 {
 .edit {
   text-shadow: none;
   color: black;
+  font-size: 30pt;
+}
+
+.edit-mode {
+  box-shadow: 5px 5px 10px #2e3840;
 }
 
 .drivers {
@@ -45,35 +49,16 @@ h2 {
 
 .team {
   width: 91%;
-  height: 400px;
   margin-bottom: 3%;
   border: black 2px solid;
   border-radius: 10px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   padding-right: 2%;
 }
 
-.race-result {
-  border: black 2px solid;
-  border-radius: 5px;
-  text-align: center;
-  height: 70%;
-  width: 15%;
-  margin: 2%;
-  padding: 2% 0;
-}
-
 .team-info {
-  width: 38%;
+  width: 100%;
   height: 84%;
   margin: .5% 1% 0 0;
-}
-
-.team-stats {
-  margin-top: 5%;
-  font-size: 15pt;
 }
 
 .name-input {
@@ -84,8 +69,11 @@ h2 {
 
 .name-submit {
   background: none;
-  border: 2px solid black;
+  border: none;
   border-radius: 5px;
-  padding: 1%;
+  padding: 1% 2%;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 15pt;
+  color: white;
+  background-color: #e10600;
 }

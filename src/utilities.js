@@ -1,5 +1,5 @@
 import { getData } from "./apiCalls";
-import { sampleCleanedDrivers, sampleSingleDriver } from "./sampleData";
+import { sampleCleanedDrivers, sampleConstructor, sampleSingleDriver1 } from "./sampleData";
 
 export const cleanDriverData = () => {
   // return getData('rankings/drivers?season=2021').then(data => {
@@ -21,10 +21,11 @@ export const cleanSingleDriver = (name) => {
   //    firstName: driver.name.substring(0, driver.name.indexOf(' ')),
   //    image: driver.image,
   //    number: driver.number,
+  //    team: driver.teams[1].team.name,
   //    careerPoints: driver.career_points,
   //    birthday: driver.birthdate,
   //    birthplace: driver.birthplace,
-  //    country: driver.country.name,
+  //    country: driver.country.name.split(',')[0],
   //    totalRaces: driver.grands_prix_entered,
   //    totalPodiums: driver.podiums,
   //    totalTeams: driver.teams.length,
@@ -33,5 +34,16 @@ export const cleanSingleDriver = (name) => {
   //    worldChamp: driver.world_championships
   //  }
   // }))
-  return sampleSingleDriver;
+  return sampleSingleDriver1;
+}
+
+export const cleanConstructors = (year) => {
+  // return getData(year).then(data => data.response.map(team => {
+  //   return {
+  //     team: team.team.name,
+  //     points: team.points,
+  //     logo: team.team.logo
+  //   }
+  // }))
+  return sampleConstructor;
 }

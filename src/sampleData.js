@@ -21,15 +21,16 @@ const sampleCleanedDrivers = [
   {name: 'Nikita Mazepin', position: 20, points: 0}
 ]
 
-const sampleSingleDriver = [
+const sampleSingleDriver1 = [
   {
     name: 'Max Verstappen',
     firstName: 'Max',
     image: "https://media-3.api-sports.io/formula-1/drivers/25.png",
     number: 1,
+    team: 'Red Bull',
     careerPoints: "2080.5",
     birthday: '1997-09-30',
-    birthplace: "Hasselt, Belgium",
+    birthplace: "Hasselt",
     country: 'Netherlands',
     totalRaces: 166,
     totalPodiums: 80,
@@ -40,4 +41,46 @@ const sampleSingleDriver = [
   }
 ]
 
-export { sampleCleanedDrivers, sampleSingleDriver }
+const sampleSingleDriver2 = [
+  {
+    name: 'Lewis Hamilton',
+    firstName: 'Lewis',
+    image: "https://media-3.api-sports.io/formula-1/drivers/44.png",
+    number: 44,
+    team: 'Mercedes-AMG Petronas',
+    careerPoints: "4443.5",
+    birthday: '1985-01-07',
+    birthplace: "Stevenage, United Kingdom",
+    country: 'United Kingdom',
+    totalRaces: 288,
+    totalPodiums: 192,
+    totalTeams: 2,
+    highestFinish: 1,
+    numHighest: 103,
+    worldChamp: 7
+  }
+]
+
+const sampleConstructor = [
+  {points: 613, team: 'Mercedes-AMG Petronas', logo: 'https://media-1.api-sports.io/formula-1/teams/5.png'},
+
+  {points: 585, team: 'Red Bull Racing', logo: 'https://media-3.api-sports.io/formula-1/teams/1.png'},
+
+  {points: 323, team: 'Scuderia Ferrari', logo: 'https://media-1.api-sports.io/formula-1/teams/3.png'},
+  
+  {points: 275, team: 'McLaren Racing', logo: 'https://media-3.api-sports.io/formula-1/teams/2.png'},
+
+  {points: 155, team: 'Alpine F1 Team', logo: 'https://media-1.api-sports.io/formula-1/teams/13.png'},
+
+  {points: 142, team: 'Scuderia AlphaTauri Honda', logo: 'https://media-1.api-sports.io/formula-1/teams/7.png'},
+
+  {points: 77, team: 'Aston Martin F1 Team', logo: 'https://media-3.api-sports.io/formula-1/teams/17.png'},
+
+  {points: 23, team: 'Williams F1 Team', logo: 'https://media-2.api-sports.io/formula-1/teams/12.png'},
+
+  {points: 13, team: 'Alfa Romeo', logo: 'https://media-2.api-sports.io/formula-1/teams/18.png'},
+
+  {points: 0, team: 'Haas F1 Team', logo: 'https://media-3.api-sports.io/formula-1/teams/14.png'}
+]
+
+export { sampleCleanedDrivers, sampleSingleDriver1, sampleSingleDriver2, sampleConstructor }

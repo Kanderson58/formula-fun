@@ -1,15 +1,28 @@
 import { useState } from 'react';
 import defaultdriver from '../../images/defaultdriver.jpeg';
 import './DefaultDriver.css';
+import { cleanSingleDriver } from '../../utilities';
 
 const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
   const [buttonText, setButtonText] = useState('Sign my driver!');
   const availableDrivers = allDrivers
-    .filter(driver => !drivers.includes(driver.name))
+    .filter(driver => !drivers.map(test => test.name).includes(driver.name))
+    .sort((a, b) => (a.name < b.name) ? -1 : 0)
     .map(driver => <option value={driver.name} key={driver.name}>{driver.name}</option>);
 
   const checkInput = (driver) => {
-    driver !== 'default' ? setDrivers([...drivers, driver]) : setButtonText('Please choose a driver!');
+    if(driver !== 'default') {
+      const driverData = cleanSingleDriver()[0];
+      setDrivers([...drivers, driverData]);
+
+      // async function fetchData () {
+      //   const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
+      //   setDrivers([...drivers, singleDriver])
+      // }
+      // fetchData();
+    } else { 
+      setButtonText('Please choose a driver!')
+    };
   }
 
   return (

@@ -3,13 +3,14 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   padding: 5%;
   overflow: hidden;
 }
 
 .formula-fun {
-  font-size: 50pt;
+  font-size: 40pt;
+  margin: 0;
 }
 
 .see-team {
@@ -19,7 +20,7 @@
   border: 2px solid black;
   border-radius: 5px;
   padding: 1%;
-  margin: 2% 0 3%;
+  margin: 2% 0 5%;
 }
 
 .see-team:hover {

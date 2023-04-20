@@ -10,19 +10,20 @@ import DriversPage from '../DriversPage/DriversPage';
 const App = () => {
   const [allDrivers, setAllDrivers] = useState([]);
   const [drivers, setDrivers] = useState([]);
-  const [teamName, setTeamName] = useState('Name My Team');
+  const [teamName, setTeamName] = useState('');
 
   useEffect(() => {
     setAllDrivers(cleanDriverData());
-    // cleanDriverData().then(data => setAllDrivers(data))
   }, []);
-  
+
   return (
     <div>
       <Header path={useLocation().pathname} />
       <main>
         <Switch>
-          <Route exact path='/'> <RacePage/> </Route>
+          <Route exact path='/'> 
+            {drivers.length !== 2 && <RacePage />}
+          </Route>
           <Route path='/team'> 
             <TeamPage 
               allDrivers={allDrivers} 

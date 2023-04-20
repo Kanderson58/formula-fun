@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import Driver from '../Driver/Driver';
 import DefaultDriver from '../DefaultDriver/DefaultDriver';
+import Constructors from '../Constructors/Constructors';
 import './TeamPage.css';
+import { useEffect } from 'react';
 
 const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    setEditMode(false);
+  }, [teamName])
 
   const editName = () => {
     setEditMode(true);
@@ -12,8 +18,12 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   
   const submitTeamName = (e) => {
     e.preventDefault();
-    setTeamName(e.target.previousSibling.value);
-    setEditMode(false);
+    if(e.target.previousSibling.value) {
+      setTeamName(e.target.previousSibling.value);
+      setEditMode(false);
+    } else {
+      e.target.previousSibling.placeholder = 'Please choose a team name';
+    }
   }
 
   return (
@@ -31,17 +41,16 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
         <div className='team-info'>
 
           {!editMode && <div className='team-header'>
-            <h2>{teamName}</h2><span className='material-symbols-outlined edit' onClick={editName}>edit</span>
+            {!teamName && <h2>Give Your Team A Name!</h2>}<h2>{teamName}</h2><span className='material-symbols-outlined edit' onClick={editName}>edit</span>
           </div>}
 
-          {editMode && <div className='team-header'>
-            <input type='text' placeholder={teamName} maxLength='30' className='name-input' />
+          {editMode && <div className='team-header edit-mode'>
+            <input type='text' placeholder={teamName} maxLength='50' className='name-input' required />
             <input type='submit' className='name-submit' onClick={(e) => submitTeamName(e)} />
           </div>}
+
+          {teamName && !editMode && <Constructors allDrivers={allDrivers} drivers={drivers} teamName={teamName} editMode={editMode} />}
         </div>
-        <section className='race-result'>Race 1 Result</section>
-        <section className='race-result'>Race 2 Result</section>
-        <section className='race-result'>Race 3 Result</section>
       </div>}
     </section>
   )

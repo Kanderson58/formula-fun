@@ -21,7 +21,7 @@ const DriversPage = ({allDrivers}) => {
         <h3>SEASON RANKINGS</h3>
         {allDriversJSX}
       </div>
-      {chosenDriver ? <Driver chosenDriver={allDrivers.find(driver => driver.position === chosenDriver).name}/> : <p className='selected-driver no-driver'>Click on a driver <br/> to see their stats!</p>}
+      {chosenDriver ? <Driver chosenDriver={allDrivers.find(driver => driver.position === chosenDriver)}/> : <p className='selected-driver no-driver'>Click on a driver <br/> to see their stats!</p>}
     </section>
   )
 }
