@@ -25,7 +25,7 @@ export const cleanSingleDriver = (name) => {
   //    careerPoints: driver.career_points,
   //    birthday: driver.birthdate,
   //    birthplace: driver.birthplace,
-  //    country: driver.country.name.split(',')[0],
+  //    country: driver.country.name,
   //    totalRaces: driver.grands_prix_entered,
   //    totalPodiums: driver.podiums,
   //    totalTeams: driver.teams.length,

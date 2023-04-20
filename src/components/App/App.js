@@ -14,6 +14,7 @@ const App = () => {
 
   useEffect(() => {
     setAllDrivers(cleanDriverData());
+    // cleanDriverData().then(data => setAllDrivers(data));
   }, []);
 
   return (
