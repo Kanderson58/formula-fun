@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Driver from '../Driver/Driver';
 import DefaultDriver from '../DefaultDriver/DefaultDriver';
+import Constructors from '../Constructors/Constructors';
 import './TeamPage.css';
 
 const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
@@ -12,8 +13,12 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   
   const submitTeamName = (e) => {
     e.preventDefault();
-    setTeamName(e.target.previousSibling.value);
-    setEditMode(false);
+    if(e.target.previousSibling.value) {
+      setTeamName(e.target.previousSibling.value);
+      setEditMode(false);
+    } else {
+      e.target.previousSibling.placeholder = 'Please choose a team name';
+    }
   }
 
   return (
@@ -35,13 +40,12 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
           </div>}
 
           {editMode && <div className='team-header'>
-            <input type='text' placeholder={teamName} maxLength='30' className='name-input' />
+            <input type='text' placeholder={teamName} maxLength='25' className='name-input' required />
             <input type='submit' className='name-submit' onClick={(e) => submitTeamName(e)} />
           </div>}
+
+          <Constructors drivers={drivers} teamName={teamName} />
         </div>
-        <section className='race-result'>Race 1 Result</section>
-        <section className='race-result'>Race 2 Result</section>
-        <section className='race-result'>Race 3 Result</section>
       </div>}
     </section>
   )

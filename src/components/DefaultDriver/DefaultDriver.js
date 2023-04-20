@@ -6,7 +6,8 @@ const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
   const [buttonText, setButtonText] = useState('Sign my driver!');
   const availableDrivers = allDrivers
     .filter(driver => !drivers.includes(driver.name))
-    .map(driver => <option value={driver.name} key={driver.name}>{driver.name}</option>);
+    .sort((a, b) => (a.name < b.name) ? -1 : 0)
+    .map(driver => <option value={driver.name} key={driver.name}>{driver.name}</option>)
 
   const checkInput = (driver) => {
     driver !== 'default' ? setDrivers([...drivers, driver]) : setButtonText('Please choose a driver!');

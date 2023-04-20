@@ -1,0 +1,26 @@
+.constructors {
+  width: 100%;
+}
+
+.constructor-rankings {
+  margin: 4%;
+  padding: 1%;
+  border: black 3px solid;
+}
+
+.rank {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+  font-size: 15pt;
+  text-shadow: 2px 2px 0px black;
+  color: white;
+  background-image: linear-gradient(to right, #e00400, #e00400dc, #e0040091, white);
+  border: white 3px solid;
+}
+
+.pts {
+  color: black;
+  text-shadow: 2px 2px 0px white;
+}

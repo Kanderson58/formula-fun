@@ -10,9 +10,9 @@ h2 {
 }
 
 .team-header {
-  width: 93%;
-  height: fit-content;
-  padding: 3% 3% 2% 3%;
+  width: 100%;
+  padding: 3% 5% 2%;
+  margin: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,13 +45,9 @@ h2 {
 
 .team {
   width: 91%;
-  height: 400px;
   margin-bottom: 3%;
   border: black 2px solid;
   border-radius: 10px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   padding-right: 2%;
 }
 
