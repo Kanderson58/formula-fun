@@ -12,16 +12,15 @@ const Driver = ({chosenDriver}) => {
 
   useEffect(() => {
     // async function fetchData () {
-    //   const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
+    //   const singleDriver = await cleanSingleDriver(chosenDriver).then(driver => driver[0]);
     //   setDriverInfo(singleDriver);
     // }
     // fetchData();
-    setDriverInfo(cleanSingleDriver(chosenDriver.name)[0]);
+    setDriverInfo(cleanSingleDriver(chosenDriver)[0]);
   }, [chosenDriver])
 
   return (
     <div className='selected-driver'>
-      {console.log(driverInfo)}
       {driverInfo.name && <ul className='driver-info'>
         {driverInfo.name} <span className='number'>#{driverInfo.number}</span>
         {driverDescription}

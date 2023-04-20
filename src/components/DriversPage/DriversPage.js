@@ -1,16 +1,9 @@
-import { useState, useEffect } from 'react';
-import { cleanDriverData } from '../../utilities.js';
+import { useState } from 'react';
 import Driver from '../Driver/Driver.js';
 import './DriversPage.css';
 
-const DriversPage = () => {
+const DriversPage = ({allDrivers}) => {
   const [chosenDriver, setChosenDriver] = useState();
-  const [allDrivers, setAllDrivers] = useState([]);
-
-  useEffect(() => {
-    setAllDrivers(cleanDriverData());
-    // cleanDriverData().then(data => setAllDrivers(data))
-  }, [])
 
   const allDriversJSX = allDrivers.map(driver => 
     <div className={`ranked-driver ${chosenDriver === driver.position && 'chosen-driver pointer-event'}`} 
@@ -28,7 +21,7 @@ const DriversPage = () => {
         <h3>SEASON RANKINGS</h3>
         {allDriversJSX}
       </div>
-      {chosenDriver ? <Driver chosenDriver={allDrivers.find(driver => driver.position === chosenDriver)}/> : <p className='selected-driver no-driver'>Click on a driver <br/> to see their stats!</p>}
+      {chosenDriver ? <Driver chosenDriver={allDrivers.find(driver => driver.position === chosenDriver).name}/> : <p className='selected-driver no-driver'>Click on a driver <br/> to see their stats!</p>}
     </section>
   )
 }
