@@ -3,6 +3,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: black 2px solid;
+  border-radius: 10px;
+  height: 400px;
+  width: 45%;
+  font-size: 25pt;
+  margin-top: 2%;
 }
 
 .driver-select {

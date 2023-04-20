@@ -30,19 +30,10 @@ h2 {
 }
 
 .drivers {
-  padding: 3% 0;
+  padding: 3% 0 1%;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-}
-
-.driver {
-  border: black 2px solid;
-  border-radius: 10px;
-  height: 400px;
-  width: 45%;
-  display: flex;
-  font-size: 25pt;
 }
 
 .driver-img {

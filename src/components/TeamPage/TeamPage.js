@@ -22,15 +22,11 @@ const TeamPage = ({allDrivers}) => {
     <section className='team-page'>
       <section className='drivers'>
 
-        <div className='driver'>
-          {!drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
-          {drivers[0] && <Driver chosenDriver={drivers[0]}/>}
-        </div>
-
-        {drivers[0] && <div className='driver'>        
-          {!drivers[1] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
-          {drivers[1] && <Driver chosenDriver={drivers[1]}/>}
-        </div>}
+        {!drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
+        {drivers[0] && <Driver chosenDriver={drivers[0]}/>}
+   
+        {!drivers[1] && drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
+        {drivers[1] && <Driver chosenDriver={drivers[1]}/>}
 
       </section>
       <div className='team'>
