@@ -6,5 +6,5 @@ export const getData = async(params) => {
 //   }
 // })
 //   const drivers = await result.json();
-//   return drivers
+//   return drivers;
 }

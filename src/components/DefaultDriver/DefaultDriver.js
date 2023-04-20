@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import './DefaultDriver.css'
+import defaultdriver from '../../images/defaultdriver.jpeg';
+import './DefaultDriver.css';
 
 const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
   const [buttonText, setButtonText] = useState('Sign my driver!');
-
-  const noDriverImage = <img src='https://t3.ftcdn.net/jpg/00/88/78/20/360_F_88782064_x9Ow2lKie1fr4ncBYLE88x6InooDKAq7.jpg' className='driver-img' alt='example driver'/>
-
   const availableDrivers = allDrivers
     .filter(driver => !drivers.includes(driver.name))
     .map(driver => <option value={driver.name} key={driver.name}>{driver.name}</option>);
@@ -16,7 +14,7 @@ const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
 
   return (
     <div className='default-driver'>
-      {noDriverImage}
+      <img src={defaultdriver} className='driver-img' alt='example driver'/>
       <div className='driver-select'>
         Pick your driver:
         <select defaultValue='default' onChange={() => setButtonText('Sign my driver!')}>

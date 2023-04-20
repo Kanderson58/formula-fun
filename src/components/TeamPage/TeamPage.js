@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Driver from '../Driver/Driver';
 import DefaultDriver from '../DefaultDriver/DefaultDriver';
-import './TeamPage.css'
+import './TeamPage.css';
 
 const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   const [editMode, setEditMode] = useState(false);
@@ -38,12 +38,6 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
             <input type='text' placeholder={teamName} maxLength='30' className='name-input' />
             <input type='submit' className='name-submit' onClick={(e) => submitTeamName(e)} />
           </div>}
-
-          <ul className='team-stats'>
-            <li>Team ranking</li>
-            <li>Team win percentage</li>
-            <li>Etc etc</li>
-          </ul>
         </div>
         <section className='race-result'>Race 1 Result</section>
         <section className='race-result'>Race 2 Result</section>
