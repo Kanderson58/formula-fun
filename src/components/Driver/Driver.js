@@ -5,18 +5,18 @@ import './Driver.css';
 const Driver = ({chosenDriver}) => {
   const [driverInfo, setDriverInfo] = useState({});
   const driverDescription = <p className='blurb'>
-    {driverInfo.firstName}, born {driverInfo.birthday} in {driverInfo.birthplace}, drives for his country {driverInfo.country}.
+    {driverInfo.firstName}, born {driverInfo.birthday} in {driverInfo.birthplace}, drives for his country, {driverInfo.country}.
     {driverInfo.highestFinish == 1 && ` He has achieved P1 in ${driverInfo.numHighest} Grand Prix. `} 
     {driverInfo.worldChamp === 1 && ' He is a one-time World Champion. '}
     {driverInfo.worldChamp > 1 && ` He is a World Champion, winning the championship ${driverInfo.worldChamp} times. `}</p>
 
   useEffect(() => {
-    async function fetchData () {
-      const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
-      setDriverInfo(singleDriver);
-    }
-    fetchData();
-    // setDriverInfo(cleanSingleDriver(chosenDriver.name)[0]);
+    // async function fetchData () {
+    //   const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
+    //   setDriverInfo(singleDriver);
+    // }
+    // fetchData();
+    setDriverInfo(cleanSingleDriver(chosenDriver.name)[0]);
   }, [chosenDriver])
 
   return (
