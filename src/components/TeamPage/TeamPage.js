@@ -1,29 +1,50 @@
+import { useState } from 'react'
+import Driver from '../Driver/Driver';
+import DefaultDriver from '../DefaultDriver/DefaultDriver';
 import './TeamPage.css'
 
-const TeamPage = ({teamName}) => {
+const TeamPage = ({allDrivers}) => {
+  const [teamName, setTeamName] = useState('Name My Team');
+  const [drivers, setDrivers] = useState([]);
+  const [editMode, setEditMode] = useState(false);
+
+  const editName = () => {
+    setEditMode(true);
+  }
+  
+  const submitTeamName = (e) => {
+    e.preventDefault();
+    setTeamName(e.target.previousSibling.value);
+    setEditMode(false);
+  }
+
   return (
     <section className='team-page'>
       <section className='drivers'>
+
         <div className='driver'>
-          <img 
-            src='https://t3.ftcdn.net/jpg/00/88/78/20/360_F_88782064_x9Ow2lKie1fr4ncBYLE88x6InooDKAq7.jpg' 
-            className='driver-img' 
-            alt='example driver'/>
-          <h1 className='driver-name'>Driver 1</h1>
+          {!drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
+          {drivers[0] && <Driver chosenDriver={drivers[0]}/>}
         </div>
-        <div className='driver'>          
-          <img 
-            src='https://t3.ftcdn.net/jpg/00/88/78/20/360_F_88782064_x9Ow2lKie1fr4ncBYLE88x6InooDKAq7.jpg' 
-            className='driver-img' 
-            alt='example driver'/>
-          <h1 className='driver-name'>Driver 2</h1>
-        </div>
+
+        {drivers[0] && <div className='driver'>        
+          {!drivers[1] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
+          {drivers[1] && <Driver chosenDriver={drivers[1]}/>}
+        </div>}
+
       </section>
       <div className='team'>
         <div className='team-info'>
-          <div className='team-header'>
-            <h2>{teamName}</h2>
-          </div>
+
+          {!editMode && <div className='team-header'>
+            <h2>{teamName}</h2><span className='material-symbols-outlined edit' onClick={editName}>edit</span>
+          </div>}
+
+          {editMode && <div className='team-header'>
+            <input type='text' placeholder={teamName} maxLength='30' className='name-input' />
+            <input type='submit' className='name-submit' onClick={(e) => submitTeamName(e)} />
+          </div>}
+
           <ul className='team-stats'>
             <li>Team ranking</li>
             <li>Team win percentage</li>

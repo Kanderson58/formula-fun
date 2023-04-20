@@ -1,0 +1,25 @@
+.default-driver {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.driver-select {
+  width: 60%;
+  text-align: center;
+}
+
+.submit-driver {
+  border: black 1px solid;
+  height: 40px;
+  padding: 0 3%;
+  margin: 2% 1%;
+}
+
+select {
+  height: 40px;
+  padding: 0 3%;
+  margin: 2% 1%;
+  font-family: 'Josefin Sans', sans-serif;
+}

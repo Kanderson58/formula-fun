@@ -16,6 +16,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 a {

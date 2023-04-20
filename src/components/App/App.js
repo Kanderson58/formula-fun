@@ -9,14 +9,14 @@ import DriversPage from '../DriversPage/DriversPage';
 
 const App = () => {
   const [allDrivers, setAllDrivers] = useState([]);
-  const [team, setTeam] = useState({});
+  const [team, setTeam] = useState({'drivers': [], 'name': ''});
 
   useEffect(() => {
     setAllDrivers(cleanDriverData());
     // cleanDriverData().then(data => setAllDrivers(data))
   }, []);
 
-  const setTeamDrivers = (drivers, name) => {
+  const setTeamDrivers = (drivers, name, done) => {
     setTeam({'drivers': drivers, 'name': name});
   }
   
@@ -28,7 +28,7 @@ const App = () => {
           <Route exact path='/'> 
             <RacePage allDrivers={allDrivers} setTeamDrivers={setTeamDrivers} />
           </Route>
-          <Route path='/team'> <TeamPage teamName={team.name}/> </Route>
+          <Route path='/team'> <TeamPage teamName={team.name} allDrivers={allDrivers}/> </Route>
           <Route path='/drivers'> <DriversPage allDrivers={allDrivers} /> </Route>
         </Switch>
       </main>
