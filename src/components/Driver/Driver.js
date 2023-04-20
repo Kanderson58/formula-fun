@@ -11,7 +11,6 @@ const Driver = ({chosenDriver}) => {
     {driverInfo.worldChamp > 1 && ` He is a World Champion, winning the championship ${driverInfo.worldChamp} times. `}</p>
 
   useEffect(() => {
-    console.log(chosenDriver)
     // async function fetchData () {
     //   const singleDriver = await cleanSingleDriver(chosenDriver).then(driver => driver[0]);
     //   setDriverInfo(singleDriver);

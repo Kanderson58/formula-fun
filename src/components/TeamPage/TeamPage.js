@@ -3,9 +3,7 @@ import Driver from '../Driver/Driver';
 import DefaultDriver from '../DefaultDriver/DefaultDriver';
 import './TeamPage.css'
 
-const TeamPage = ({allDrivers}) => {
-  const [teamName, setTeamName] = useState('Name My Team');
-  const [drivers, setDrivers] = useState([]);
+const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   const [editMode, setEditMode] = useState(false);
 
   const editName = () => {
@@ -22,14 +20,14 @@ const TeamPage = ({allDrivers}) => {
     <section className='team-page'>
       <section className='drivers'>
 
-        {!drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
+        {!drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers} />}
         {drivers[0] && <Driver chosenDriver={drivers[0]}/>}
    
         {!drivers[1] && drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
         {drivers[1] && <Driver chosenDriver={drivers[1]}/>}
 
       </section>
-      <div className='team'>
+      {drivers.length === 2 && <div className='team'>
         <div className='team-info'>
 
           {!editMode && <div className='team-header'>
@@ -50,7 +48,7 @@ const TeamPage = ({allDrivers}) => {
         <section className='race-result'>Race 1 Result</section>
         <section className='race-result'>Race 2 Result</section>
         <section className='race-result'>Race 3 Result</section>
-      </div>
+      </div>}
     </section>
   )
 }

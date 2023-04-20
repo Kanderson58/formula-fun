@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react';
-import { Route, Switch, Link, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { cleanDriverData } from '../../utilities';
 import Header from "../Header/Header";
 import RacePage from '../RacePage/RacePage';
@@ -9,26 +9,29 @@ import DriversPage from '../DriversPage/DriversPage';
 
 const App = () => {
   const [allDrivers, setAllDrivers] = useState([]);
-  const [team, setTeam] = useState({'drivers': [], 'name': ''});
+  const [drivers, setDrivers] = useState([]);
+  const [teamName, setTeamName] = useState('Name My Team');
 
   useEffect(() => {
     setAllDrivers(cleanDriverData());
     // cleanDriverData().then(data => setAllDrivers(data))
   }, []);
-
-  const setTeamDrivers = (drivers, name, done) => {
-    setTeam({'drivers': drivers, 'name': name});
-  }
   
   return (
     <div>
       <Header path={useLocation().pathname} />
       <main>
         <Switch>
-          <Route exact path='/'> 
-            <RacePage allDrivers={allDrivers} setTeamDrivers={setTeamDrivers} />
+          <Route exact path='/'> <RacePage/> </Route>
+          <Route path='/team'> 
+            <TeamPage 
+              allDrivers={allDrivers} 
+              drivers={drivers} 
+              setDrivers={setDrivers} 
+              teamName={teamName}
+              setTeamName={setTeamName}
+            /> 
           </Route>
-          <Route path='/team'> <TeamPage teamName={team.name} allDrivers={allDrivers}/> </Route>
           <Route path='/drivers'> <DriversPage allDrivers={allDrivers} /> </Route>
         </Switch>
       </main>
