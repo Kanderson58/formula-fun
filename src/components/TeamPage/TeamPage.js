@@ -3,9 +3,15 @@ import Driver from '../Driver/Driver';
 import DefaultDriver from '../DefaultDriver/DefaultDriver';
 import Constructors from '../Constructors/Constructors';
 import './TeamPage.css';
+import { useEffect } from 'react';
+import { cleanSingleDriver } from '../../utilities';
 
-const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
+const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName, team, setTeam}) => {
   const [editMode, setEditMode] = useState(false);
+
+  useEffect(() => {
+    setTeam()
+  }, []);
 
   const editName = () => {
     setEditMode(true);
@@ -36,7 +42,7 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
         <div className='team-info'>
 
           {!editMode && <div className='team-header'>
-            <h2>{teamName}</h2><span className='material-symbols-outlined edit' onClick={editName}>edit</span>
+            {!teamName && <h2>Give Your Team A Name!</h2>}<h2>{teamName}</h2><span className='material-symbols-outlined edit' onClick={editName}>edit</span>
           </div>}
 
           {editMode && <div className='team-header'>
@@ -44,7 +50,7 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
             <input type='submit' className='name-submit' onClick={(e) => submitTeamName(e)} />
           </div>}
 
-          <Constructors drivers={drivers} teamName={teamName} />
+          {teamName && <Constructors drivers={drivers} teamName={teamName} />}
         </div>
       </div>}
     </section>

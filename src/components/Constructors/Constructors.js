@@ -8,9 +8,9 @@ const Constructors = ({drivers, teamName}) => {
   const rankings = constructorRanking.map(ranking => <li className='rank' key={ranking.position}>{ranking.position} - {ranking.team} <p className='pts'>({ranking.points} points)</p></li>)
 
   useEffect(() => {
-    // cleanConstructors('rankings/teams?season=2021').then(data => setConstructorRanking(data));
-    setConstructorRanking(cleanConstructors());
-  }, [])
+    cleanConstructors('rankings/teams?season=2021').then(data => setConstructorRanking(data));
+    // setConstructorRanking(cleanConstructors());
+  }, []);
 
   return (
     <div className='constructors'>

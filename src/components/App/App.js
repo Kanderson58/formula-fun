@@ -11,26 +11,16 @@ const App = () => {
   const [allDrivers, setAllDrivers] = useState([]);
   const [drivers, setDrivers] = useState([]);
   const [team, setTeam] = useState([]);
-  const [teamName, setTeamName] = useState('Name My Team');
+  const [teamName, setTeamName] = useState('');
 
   useEffect(() => {
-    setAllDrivers(cleanDriverData());
-    // cleanDriverData().then(data => setAllDrivers(data));
-    
-    // if(drivers.length === 2){
-    // // async function fetchData () {
-    // //   const singleDriver = await cleanSingleDriver(chosenDriver).then(driver => driver[0]);
-    // //   setDriverInfo(singleDriver);
-    // // }
-    // // fetchData();
-    //   setTeam([...team, cleanSingleDriver(drivers[0])]);
-    //   setTeam([...team, cleanSingleDriver(drivers[1])]);
-    // }
-    // console.log(team);
+    // setAllDrivers(cleanDriverData());
+    cleanDriverData().then(data => setAllDrivers(data));
   }, []);
 
   return (
     <div>
+      {console.log('app state', drivers)}
       <Header path={useLocation().pathname} />
       <main>
         <Switch>
@@ -44,6 +34,8 @@ const App = () => {
               setDrivers={setDrivers} 
               teamName={teamName}
               setTeamName={setTeamName}
+              team={team}
+              setTeam={setTeam}
             /> 
           </Route>
           <Route path='/drivers'> <DriversPage allDrivers={allDrivers} /> </Route>
