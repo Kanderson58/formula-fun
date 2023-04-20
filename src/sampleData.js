@@ -30,7 +30,7 @@ const sampleSingleDriver1 = [
     team: 'Red Bull',
     careerPoints: "2080.5",
     birthday: '1997-09-30',
-    birthplace: "Hasselt",
+    birthplace: "Hasselt, Belgium",
     country: 'Netherlands',
     totalRaces: 166,
     totalPodiums: 80,
