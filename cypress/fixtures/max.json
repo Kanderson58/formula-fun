@@ -1,19 +1,21 @@
-[
-  {
-    "name": "Max Verstappen",
-    "firstName": "Max",
-    "image": "https://media-3.api-sports.io/formula-1/drivers/25.png",
-    "number": 1,
-    "team": "Red Bull Racing",
-    "careerPoints": "2080.5",
-    "birthday": "1997-09-30",
-    "birthplace": "Hasselt, Belgium",
-    "country": "Netherlands",
-    "totalRaces": 166,
-    "totalPodiums": 80,
-    "totalTeams": 9,
-    "highestFinish": 1,
-    "numHighest": 37,
-    "worldChamp": 2
-  }
-]
+{
+  "response": [
+    {
+      "name": "Max Verstappen",
+      "firstName": "Max",
+      "image": "https://media-3.api-sports.io/formula-1/drivers/25.png",
+      "number": 1,
+      "team": {"teams": [{}, {"team": {"name": "Red Bull Racing"}}]},
+      "careerPoints": "2080.5",
+      "birthday": "1997-09-30",
+      "birthplace": "Hasselt, Belgium",
+      "country": "Netherlands",
+      "totalRaces": 166,
+      "totalPodiums": 80,
+      "totalTeams": 9,
+      "highestFinish": {"highest_race_finish": {"position": 1}},
+      "numHighest": {"highest_race_finish": {"number": 37}},
+      "worldChamp": 2
+    }
+  ]
+}

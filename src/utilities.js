@@ -15,6 +15,7 @@ export const cleanDriverData = () => {
 }
 
 export const cleanSingleDriver = (name) => {
+  console.log(name)
   return getData(`drivers?name=${name}`).then(data => data.response.map(driver => {
    return {
      name: driver.name,

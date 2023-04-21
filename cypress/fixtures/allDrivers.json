@@ -1,18 +1,13 @@
 {
   "response": [
     {
-      "driver": {"name": "Lewis"},
+      "driver": {"name": "Lewis Hamilton"},
       "position": 1,
       "points": 300
     },
     {
-      "driver": {"name": "Max"},
+      "driver": {"name": "Max Verstappen"},
       "position": 2,
-      "points": 200
-    },
-    {
-      "driver": {"name": "Pierre"},
-      "position": 3,
       "points": 200
     }
   ]

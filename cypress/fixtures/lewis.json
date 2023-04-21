@@ -1,19 +1,21 @@
-[
-  {
-    "name": "Lewis Hamilton",
-    "firstName": "Lewis",
-    "image": "https://media-3.api-sports.io/formula-1/drivers/44.png",
-    "number": 44,
-    "team": "Mercedes-AMG Petronas",
-    "careerPoints": "4443.5",
-    "birthday": "1985-01-07",
-    "birthplace": "Stevenage, United Kingdom",
-    "country": "United Kingdom",
-    "totalRaces": 288,
-    "totalPodiums": 192,
-    "totalTeams": 2,
-    "highestFinish": 1,
-    "numHighest": 103,
-    "worldChamp": 7
-  }
-]
+{ 
+  "response": [
+    {
+      "name": "Lewis Hamilton",
+      "firstName": "Lewis",
+      "image": "https://media-3.api-sports.io/formula-1/drivers/44.png",
+      "number": 44,
+      "team": {"teams": [{}, {"team": {"name": "Mercedes-AMG Petronas"}}]},
+      "careerPoints": "4443.5",
+      "birthday": "1985-01-07",
+      "birthplace": "Stevenage, United Kingdom",
+      "country": "United Kingdom",
+      "totalRaces": 288,
+      "totalPodiums": 192,
+      "totalTeams": 2,
+      "highestFinish": {"highest_race_finish": {"position": 1}},
+      "numHighest": {"highest_race_finish": {"number": 103}},
+      "worldChamp": 7
+    }
+  ]
+}
