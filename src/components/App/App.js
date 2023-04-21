@@ -13,8 +13,8 @@ const App = () => {
   const [teamName, setTeamName] = useState('');
 
   useEffect(() => {
-    setAllDrivers(cleanDriverData());
-    // cleanDriverData().then(data => setAllDrivers(data));
+    // setAllDrivers(cleanDriverData());
+    cleanDriverData().then(data => setAllDrivers(data));
   }, []);
 
   return (

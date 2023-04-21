@@ -2,20 +2,17 @@
   "response": [
     {
       "name": "Lewis Hamilton",
-      "firstName": "Lewis",
-      "image": "https://media-3.api-sports.io/formula-1/drivers/44.png",
+      "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/868.png",
       "number": 44,
-      "team": {"teams": [{}, {"team": {"name": "Mercedes-AMG Petronas"}}]},
-      "careerPoints": "4443.5",
-      "birthday": "1985-01-07",
+      "teams": ["2022 season", {"team": {"name": "Mercedes-AMG Petronas"}}],
+      "career_points": "4443.5",
+      "birthdate": "1985-01-07",
       "birthplace": "Stevenage, United Kingdom",
-      "country": "United Kingdom",
-      "totalRaces": 288,
-      "totalPodiums": 192,
-      "totalTeams": 2,
-      "highestFinish": {"highest_race_finish": {"position": 1}},
-      "numHighest": {"highest_race_finish": {"number": 103}},
-      "worldChamp": 7
+      "country": {"name": "United Kingdom"},
+      "grands_prix_entered": 288,
+      "podiums": 192,
+      "highest_race_finish": {"position": 1, "number": 100},
+      "world_championships": 7
     }
   ]
 }
