@@ -26,6 +26,12 @@ describe('Home/Instructional Page', () => {
     cy.get('[href="/drivers"]').click().get('.full-rankings').should('exist');
   });
 
+  it('should allow the user to click anywhere on the grey header to get back to the home page', () => {
+    cy.get('nav > [href="/team"]').click()
+      .get('.title').click()
+      .get('.formula-fun').contains('Welcome to Formula Fun!');
+  });
+
   it('should not allow a user to access their results before they have chosen a team', () => {
     cy.get('.see-team').click().get('.constructors').should('not.exist');
   });
