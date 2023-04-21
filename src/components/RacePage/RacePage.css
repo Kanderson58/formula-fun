@@ -45,3 +45,41 @@
     transform: translate(2000px);
   }
 }
+
+@media screen and (max-width: 900px) {
+  .formula-fun {
+    font-size: 30pt;
+  }
+
+  .race-page {
+    font-size: 18pt;
+  }
+
+  .motto {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .formula-fun {
+    font-size: 22pt;
+  }
+
+  .race-page {
+    font-size: 15pt;
+  }
+
+  .see-team {
+    font-size: 18pt;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav-link {
+    font-size: 9pt;
+  }
+
+  .header-img {
+    width: 100%;
+  }
+}
