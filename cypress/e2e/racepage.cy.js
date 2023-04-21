@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Home/Instructional Page', () => {
   beforeEach('', () => {
     cy.intercept('https://v1.formula-1.api-sports.io/rankings/drivers?season=2021', {
       fixture: 'allDrivers.json'
@@ -29,4 +29,8 @@ describe('template spec', () => {
   it('should not allow a user to access their results before they have chosen a team', () => {
     cy.get('.see-team').click().get('.constructors').should('not.exist');
   });
-})
+
+  it('should direct users to a team building page', () => {
+    cy.get('.see-team').click().get('select').contains('Choose Your Driver...');
+  });
+});

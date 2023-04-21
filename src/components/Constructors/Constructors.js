@@ -25,7 +25,6 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
   }, []);
   
   const getRankings = () => {
-    console.log(constructorRanking.length)
     if(constructorRanking.length === 10) {
       constructorRanking.push({points: teamPoints, team: teamName});
     } else {

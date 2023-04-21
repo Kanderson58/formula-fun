@@ -21,7 +21,7 @@ const Driver = ({chosenDriver}) => {
   }, [chosenDriver])
 
   return (
-    <div className='selected-driver'>
+    <div className={`selected-driver ${driverInfo.name}`}>
       {driverInfo.name && <ul className='driver-info'>
         {driverInfo.name} <span className='number'>#{driverInfo.number}</span>
         {driverDescription}
