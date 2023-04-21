@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import defaultdriver from '../../images/defaultdriver.jpeg';
 import './DefaultDriver.css';
 import { cleanSingleDriver } from '../../utilities';
@@ -12,14 +13,14 @@ const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
 
   const checkInput = (driver) => {
     if(driver !== 'default') {
-      // const driverData = cleanSingleDriver()[0];
-      // setDrivers([...drivers, driverData]);
+      const driverData = cleanSingleDriver()[0];
+      setDrivers([...drivers, driverData]);
 
-      async function fetchData () {
-        const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
-        setDrivers([...drivers, singleDriver])
-      }
-      fetchData();
+      // async function fetchData () {
+      //   const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
+      //   setDrivers([...drivers, singleDriver])
+      // }
+      // fetchData();
     } else { 
       setButtonText('Please choose a driver!')
     };
@@ -41,3 +42,9 @@ const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
 }
 
 export default DefaultDriver;
+
+DefaultDriver.propTypes = {
+  allDrivers: PropTypes.array,
+  drivers: PropTypes.array,
+  setDrivers: PropTypes.func
+};

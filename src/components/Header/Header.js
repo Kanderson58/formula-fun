@@ -1,7 +1,8 @@
-import './Header.css'
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import f1header from '../../images/f1header.png';
+import './Header.css'
 
 const Header = ({path}) => {
   const [selected, setSelected] = useState(path);
@@ -27,3 +28,5 @@ const Header = ({path}) => {
 }
 
 export default Header;
+
+Header.propTypes = { path: PropTypes.string };

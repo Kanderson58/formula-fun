@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Driver from '../Driver/Driver.js';
 import './DriversPage.css';
 
@@ -27,3 +28,5 @@ const DriversPage = ({allDrivers}) => {
 }
 
 export default DriversPage;
+
+DriversPage.propTypes = { allDrivers: PropTypes.array };
