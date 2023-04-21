@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Driver from '../Driver/Driver';
 import DefaultDriver from '../DefaultDriver/DefaultDriver';
 import Constructors from '../Constructors/Constructors';
 import './TeamPage.css';
-import { useEffect } from 'react';
 
 const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   const [editMode, setEditMode] = useState(false);
@@ -57,3 +57,11 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
 }
 
 export default TeamPage;
+
+TeamPage.propTypes = {
+  allDrivers: PropTypes.array, 
+  drivers: PropTypes.array, 
+  setDrivers: PropTypes.func, 
+  teamName: PropTypes.string, 
+  setTeamName: PropTypes.func
+};

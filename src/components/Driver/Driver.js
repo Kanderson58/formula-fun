@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { cleanSingleDriver } from '../../utilities';
 import './Driver.css';
 
@@ -11,13 +12,13 @@ const Driver = ({chosenDriver}) => {
     {driverInfo.worldChamp > 1 && ` He is a World Champion, winning the championship ${driverInfo.worldChamp} times. `}</p>
 
   useEffect(() => {
-    async function fetchData () {
-      const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
-      setDriverInfo(singleDriver);
-    }
-    fetchData();
+    // async function fetchData () {
+    //   const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
+    //   setDriverInfo(singleDriver);
+    // }
+    // fetchData();
 
-    // setDriverInfo(cleanSingleDriver(chosenDriver.name)[0]);
+    setDriverInfo(cleanSingleDriver(chosenDriver.name)[0]);
   }, [chosenDriver])
 
   return (
@@ -41,3 +42,5 @@ const Driver = ({chosenDriver}) => {
 }
 
 export default Driver;
+
+Driver.propTypes = { chosenDriver: PropTypes.object };
