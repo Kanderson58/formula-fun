@@ -13,7 +13,7 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
   const rankings = constructorRanking
     .sort((a, b) => b.points - a.points)
     .map((ranking, index) => 
-      <li className={`rank ${ranking.team === teamName ? 'user-team' : 'f1-team'}`} key={index + 1}>
+      <li className={`rank ${ranking.team === teamName ? 'user-team' : 'f1-team'}`} key={index + 1} tabIndex='0'>
         <div className='logo-ranking'><img className='logo' alt={`${ranking.team} logo`} src={ranking.logo ? ranking.logo: racecar}/>{index + 1} - {ranking.team} </div> <p className='pts'>({ranking.points} points)</p>
       </li>)
   

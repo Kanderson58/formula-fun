@@ -7,13 +7,14 @@ const DriversPage = ({allDrivers}) => {
   const [chosenDriver, setChosenDriver] = useState();
 
   const allDriversJSX = allDrivers.map(driver => 
-    <div className={`ranked-driver ${chosenDriver === driver.position && 'chosen-driver pointer-event'}`} 
+    <div className={`ranked-driver ${chosenDriver === driver.position && 'chosen-driver'}`} 
       id={`${driver.position}`} 
       key={`${driver.position}`} 
-      onClick={(e) => setChosenDriver(parseInt(e.target.id))}
+      onFocus={(e) => setChosenDriver(parseInt(e.target.id))}
+      tabIndex='0'
       >
         <p className='pointer-event'>{driver.position}) {driver.name}</p><p className='pointer-event points'> {driver.points} points</p>
-        {chosenDriver === driver.position && <span className="material-symbols-outlined driver-arrow">arrow_circle_right</span>}
+        {chosenDriver === driver.position && <span className="material-symbols-outlined driver-arrow pointer-event">arrow_circle_right</span>}
     </div>);
 
   return (
