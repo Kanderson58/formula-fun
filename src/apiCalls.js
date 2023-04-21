@@ -1,5 +1,3 @@
-let count = 0;
-
 export const getData = async(params) => { 
 //   const result = await fetch(`https://v1.formula-1.api-sports.io/${params}`, {
 //   headers: {
@@ -7,8 +5,6 @@ export const getData = async(params) => {
 //     "x-rapidapi-host": "v1.formula-1.api-sports.io"
 //   }
 // })
-//  const drivers = await result.json();
-//  count++
-//  console.log(count)
-//  return drivers;
+//   const drivers = await result.json();
+//   return drivers;
 }

@@ -1,0 +1,18 @@
+{ 
+  "response": [
+    {
+      "name": "Lewis Hamilton",
+      "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/rpm/players/full/868.png",
+      "number": 44,
+      "teams": ["2022 season", {"team": {"name": "Mercedes-AMG Petronas"}}],
+      "career_points": "4443.5",
+      "birthdate": "1985-01-07",
+      "birthplace": "Stevenage, United Kingdom",
+      "country": {"name": "United Kingdom"},
+      "grands_prix_entered": 288,
+      "podiums": 192,
+      "highest_race_finish": {"position": 1, "number": 100},
+      "world_championships": 7
+    }
+  ]
+}

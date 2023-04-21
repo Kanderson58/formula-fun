@@ -1,5 +1,42 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+describe('Home/Instructional Page', () => {
+  beforeEach('', () => {
+    cy.intercept('https://v1.formula-1.api-sports.io/rankings/drivers?season=2021', {
+      fixture: 'allDrivers.json'
+    })
+      .intercept('https://v1.formula-1.api-sports.io/drivers?name=Lewis%20Hamilton', {
+        fixture: 'lewis.json'
+      })
+      .intercept('https://v1.formula-1.api-sports.io/drivers?name=Max%20Verstappen', {
+        fixture: 'max.json'
+      })
+      .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
+        fixture: 'teams2021.json'
+      })
+      .visit('http://localhost:3000/')
+  });
+
+  it('starts the user on an instruction page', () => {
+    cy.get('.formula-fun').contains('Welcome to Formula Fun!')
+      .get('p').contains('Get ready to take on the racing world')
+      .get('.see-team').contains('Build My Team');
+  });
+
+  it('allows users to click around each link in the header', () => {
+    cy.get('nav > [href="/team"]').click().get('.default-driver').should('exist');
+    cy.get('[href="/drivers"]').click().get('.full-rankings').should('exist');
+  });
+
+  it('should allow the user to click anywhere on the grey header to get back to the home page', () => {
+    cy.get('nav > [href="/team"]').click()
+      .get('.title').click()
+      .get('.formula-fun').contains('Welcome to Formula Fun!');
+  });
+
+  it('should not allow a user to access their results before they have chosen a team', () => {
+    cy.get('.see-team').click().get('.constructors').should('not.exist');
+  });
+
+  it('should direct users to a team building page', () => {
+    cy.get('.see-team').click().get('select').contains('Choose Your Driver...');
+  });
+});
