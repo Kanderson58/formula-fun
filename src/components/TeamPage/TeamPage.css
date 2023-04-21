@@ -77,3 +77,121 @@ h2 {
   color: white;
   background-color: #e10600;
 }
+
+@media screen and (max-width: 900px) {
+  .driver-img {
+    width: 200px;
+    margin-bottom: 5%;
+  }
+
+  .default-driver {
+    width: 60%;
+    padding: 0 2%;
+    font-size: 15pt;
+    margin-top: 10%;
+  }
+
+  .drivers {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .driver-info {
+    font-size: 24pt;
+  }
+
+  .selected-driver {
+    height: 400px;
+    width: 500px;
+    margin: 8% 0 0 0;
+  }
+
+  .single {
+    font-size: 14pt;
+  }
+
+  .team {
+    margin-top: 3%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blurb {
+    font-size: 15pt;
+  }
+
+  .selected-driver {
+    height: 300px;
+    width: 450px;
+    margin: 10% 0 0 0;
+  }
+
+  .driver-info {
+    font-size: 22pt;
+  }
+
+  .single {
+    font-size: 12pt;
+  }
+
+  h2 {
+    font-size: 15pt;
+  }
+
+  .team {
+    margin-top: 5%;
+  }
+
+  .constructor-rankings {
+    width: 90%;
+  }
+
+  .rank {
+    font-size: 10pt;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .default-driver {
+    width: fit-content;
+  }
+
+  select, .submit-driver {
+    font-size: 8pt;
+  }
+
+  .default-driver {
+    border: none;
+    font-size: 14pt;
+  }
+
+  .driver-info {
+    font-size: 18pt;
+  }
+
+  .blurb {
+    font-size: 10pt;
+  }
+
+  .selected-driver {
+    height: 250px;
+    width: 250px;
+  }
+
+  .selected-driver-img {
+    height: 200px;
+  }
+
+  .single {
+    font-size: 10pt;
+  }
+
+  .rank {
+    font-size: 8pt;
+  }
+
+  .get-results {
+    width: 70%;
+    font-size: 10pt;
+  }
+}

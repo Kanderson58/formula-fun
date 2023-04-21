@@ -54,3 +54,51 @@ h3 {
   font-family: Helvetica, sans-serif;
   font-size: 15pt;
 }
+
+@media screen and (max-height: 600px) {
+  .drivers-page {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .drivers-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .full-rankings {
+    height: 300px;
+    width: 80%;
+    margin-bottom: -2%;
+    margin-top: 10%;
+  }
+
+  .selected-driver {
+    margin-bottom: 5%
+  }
+
+  .driver-arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ranked-driver {
+    font-size: 15pt;
+  }
+
+  h3 {
+    font-size: smaller;
+  }
+
+  .no-driver {
+    font-size: 18pt;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .full-rankings {
+    font-size: smaller;
+  }
+}
