@@ -12,14 +12,14 @@ const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
 
   const checkInput = (driver) => {
     if(driver !== 'default') {
-      // const driverData = cleanSingleDriver()[0];
-      // setDrivers([...drivers, driverData]);
+      const driverData = cleanSingleDriver()[0];
+      setDrivers([...drivers, driverData]);
 
-      async function fetchData () {
-        const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
-        setDrivers([...drivers, singleDriver])
-      }
-      fetchData();
+      // async function fetchData () {
+      //   const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
+      //   setDrivers([...drivers, singleDriver])
+      // }
+      // fetchData();
     } else { 
       setButtonText('Please choose a driver!')
     };

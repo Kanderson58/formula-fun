@@ -1,5 +1,13 @@
-[
-  {"points": 613, "team": "Mercedes-AMG Petronas", "logo": "https://media-1.api-sports.io/formula-1/teams/5.png"},
+{ "response":
+  [
+    {
+      "points": 613, 
+      "team": {"team": {"name": "Mercedes-AMG Petronas"}}, 
+      "logo": "https://media-1.api-sports.io/formula-1/teams/5.png"},
 
-  {"points": 585, "team": "Red Bull Racing", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}
-]
+    {
+      "points": 585, 
+      "team": {"team": {"name": "Red Bull Racing"}}, 
+      "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}
+  ]
+}
