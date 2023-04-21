@@ -1,13 +1,36 @@
 { "response":
   [
     {
-      "points": 613, 
-      "team": {"team": {"name": "Mercedes-AMG Petronas"}}, 
-      "logo": "https://media-1.api-sports.io/formula-1/teams/5.png"},
-
+      "points": 600, 
+      "team": {"name": "Mercedes-AMG Petronas", "logo": "https://media-1.api-sports.io/formula-1/teams/5.png"}
+    },
     {
-      "points": 585, 
-      "team": {"team": {"name": "Red Bull Racing"}}, 
-      "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}
+      "points": 500, 
+      "team": {"name": "Red Bull Racing", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}
+    },
+    {
+      "points": 450, 
+      "team": {"name": "Example 1", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}},
+    {
+      "points": 400, 
+      "team": {"name": "Example 2", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}},
+    {
+      "points": 350, 
+      "team": {"name": "Example 3", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}},
+    {
+      "points": 300, 
+      "team": {"name": "Example 4", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}},
+    {
+      "points": 250, 
+      "team": {"name": "Example 5", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}},
+    {
+      "points": 200, 
+      "team": {"name": "Example 6", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}},
+    {
+      "points": 100, 
+      "team": {"name": "Example 7", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}},
+    {
+      "points": 0, 
+      "team": {"name": "Example 8", "logo": "https://media-3.api-sports.io/formula-1/teams/1.png"}}
   ]
 }
