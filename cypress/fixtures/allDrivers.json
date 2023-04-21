@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Lewis",
+    "position": 1,
+    "points": 300
+  },
+  {
+    "name": "Max",
+    "position": 2,
+    "points": 200
+  },
+  {
+    "name": "Pierre",
+    "position": 3,
+    "points": 200
+  }
+]
