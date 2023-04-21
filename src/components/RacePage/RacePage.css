@@ -63,6 +63,7 @@
 @media screen and (max-width: 600px) {
   .formula-fun {
     font-size: 22pt;
+    margin-top: 10%;
   }
 
   .race-page {
@@ -74,7 +75,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .nav-link {
     font-size: 9pt;
   }
