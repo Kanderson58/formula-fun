@@ -1,8 +1,33 @@
 describe('template spec', () => {
   beforeEach('', () => {
     cy.intercept('https://v1.formula-1.api-sports.io/rankings/drivers?season=2021', {
-      fixture: 'allDrivers.json'
+      fixture: 'allDrivers.json',
+      headers: {
+        'x-apisports-key': 'fbb044d1ec06d67febe82ad0fecb8ff5',
+        "x-rapidapi-host": "v1.formula-1.api-sports.io"
+      }
     })
+      .intercept('https://v1.formula-1.api-sports.io/rankings/drivers?name=Lewis', {
+        fixture: 'lewis.json',
+        headers: {
+          'x-apisports-key': 'fbb044d1ec06d67febe82ad0fecb8ff5',
+          "x-rapidapi-host": "v1.formula-1.api-sports.io"
+        }
+      })
+      .intercept('https://v1.formula-1.api-sports.io/rankings/drivers?name=Max', {
+        fixture: 'max.json',
+        headers: {
+          'x-apisports-key': 'fbb044d1ec06d67febe82ad0fecb8ff5',
+          "x-rapidapi-host": "v1.formula-1.api-sports.io"
+        }
+      })
+      .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
+        fixture: 'teams2021.json',
+        headers: {
+          'x-apisports-key': 'fbb044d1ec06d67febe82ad0fecb8ff5',
+          "x-rapidapi-host": "v1.formula-1.api-sports.io"
+        }
+      })
       .visit('http://localhost:3000/')
   });
 
