@@ -11,10 +11,17 @@ const App = () => {
   const [allDrivers, setAllDrivers] = useState([]);
   const [drivers, setDrivers] = useState([]);
   const [teamName, setTeamName] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    setAllDrivers(cleanDriverData());
-    // cleanDriverData().then(data => setAllDrivers(data));
+    // setAllDrivers(cleanDriverData());
+    cleanDriverData().then(data => {
+      if(typeof(data) === 'string') {
+        setError(data);
+      } else {
+        setAllDrivers(data);
+      }
+    });
   }, []);
 
   return (
@@ -23,7 +30,8 @@ const App = () => {
       <main>
         <Switch>
           <Route exact path='/'> 
-            {drivers.length !== 2 && <RacePage />}
+            {drivers.length !== 2 && !error && <RacePage />}
+            {error && <p className='error'>{error}</p>}
           </Route>
           <Route path='/team'> 
             <TeamPage 

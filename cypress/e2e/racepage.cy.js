@@ -22,14 +22,18 @@ describe('Home/Instructional Page', () => {
   });
 
   it('allows users to click around each link in the header', () => {
-    cy.get('nav > [href="/team"]').click().get('.default-driver').should('exist');
-    cy.get('[href="/drivers"]').click().get('.full-rankings').should('exist');
+    cy.get('nav > [href="/team"]').click().get('.default-driver').should('exist')
+      .url('http://localhost:3000/team');
+    cy.get('[href="/drivers"]').click().get('.full-rankings').should('exist')
+      .url('http://localhost:3000/drivers');
   });
 
   it('should allow the user to click anywhere on the grey header to get back to the home page', () => {
     cy.get('nav > [href="/team"]').click()
+      .url('http://localhost:3000/team')
       .get('.title').click()
-      .get('.formula-fun').contains('Welcome to Formula Fun!');
+      .get('.formula-fun').contains('Welcome to Formula Fun!')
+      .url('http://localhost:3000/');
   });
 
   it('should not allow a user to access their results before they have chosen a team', () => {
@@ -38,5 +42,16 @@ describe('Home/Instructional Page', () => {
 
   it('should direct users to a team building page', () => {
     cy.get('.see-team').click().get('select').contains('Choose Your Driver...');
+  });
+
+  it('should display an error message for a failed API call', () => {
+    cy.intercept('https://v1.formula-1.api-sports.io/rankings/drivers?season=2021', {
+      body: {response: []}
+    })
+      .visit('http://localhost:3000/');
+
+    cy.get('.error').contains('Into the pit lane! There was an error displaying your page. Please check back later!');
+
+    cy.get('.foruma-fun').should('not.exist');
   });
 });

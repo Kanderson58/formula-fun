@@ -4,7 +4,7 @@ import defaultdriver from '../../images/defaultdriver.jpeg';
 import './DefaultDriver.css';
 import { cleanSingleDriver } from '../../utilities';
 
-const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
+const DefaultDriver = ({setError, allDrivers, drivers, setDrivers}) => {
   const [buttonText, setButtonText] = useState('Sign my driver!');
   const availableDrivers = allDrivers
     .filter(driver => !drivers.map(test => test.name).includes(driver.name))
@@ -12,15 +12,15 @@ const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
     .map(driver => <option value={driver.name} key={driver.name}>{driver.name}</option>);
 
   const checkInput = (driver) => {
-    if(driver !== 'default') {
-      const driverData = cleanSingleDriver()[0];
-      setDrivers([...drivers, driverData]);
+    if(driver !== 'default') {      
+      // const driverData = cleanSingleDriver()[0];
+      // setDrivers([...drivers, driverData]);
 
-      // async function fetchData () {
-      //   const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
-      //   setDrivers([...drivers, singleDriver])
-      // }
-      // fetchData();
+      async function fetchData () {
+        const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
+        typeof(singleDriver) === 'string' ? setError('🚩 Uh oh, red flag!  We could not find that driver.  Please try again later! 🚩') : setDrivers([...drivers, singleDriver])
+      }
+      fetchData();
     } else { 
       setButtonText('Please choose a driver!')
     };
@@ -44,6 +44,7 @@ const DefaultDriver = ({allDrivers, drivers, setDrivers}) => {
 export default DefaultDriver;
 
 DefaultDriver.propTypes = {
+  setError: PropTypes.func,
   allDrivers: PropTypes.array,
   drivers: PropTypes.array,
   setDrivers: PropTypes.func

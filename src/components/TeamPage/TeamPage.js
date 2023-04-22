@@ -7,6 +7,7 @@ import './TeamPage.css';
 
 const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   const [editMode, setEditMode] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setEditMode(false);
@@ -34,11 +35,12 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
     <section className='team-page'>
       <section className='drivers'>
 
-        {!drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers} />}
-        {drivers[0] && <Driver chosenDriver={drivers[0]}/>}
+        {!drivers[0] && !error && <DefaultDriver setError={setError} allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers} />}
+        {drivers[0] && !error && <Driver setError={setError} chosenDriver={drivers[0]}/>}
    
-        {!drivers[1] && drivers[0] && <DefaultDriver allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
-        {drivers[1] && <Driver chosenDriver={drivers[1]}/>}
+        {!drivers[1] && drivers[0] && !error && <DefaultDriver setError={setError} allDrivers={allDrivers} drivers={drivers} setDrivers={setDrivers}/>}
+        {drivers[1] && !error && <Driver setError={setError} chosenDriver={drivers[1]}/>}
+        {error && <p className='error'>{error}</p>}
 
       </section>
       {drivers.length === 2 && <div className='team'>

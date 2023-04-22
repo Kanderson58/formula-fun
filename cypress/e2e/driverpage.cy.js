@@ -15,7 +15,7 @@ describe('Driver Stats Page', () => {
       .visit('http://localhost:3000/drivers')
   });
 
-  it('should not display a driver until one is clicked on', () => {
+  it('should instruct a viewer to select a driver to view', () => {
     cy.get('.selected-driver').contains('Click on a driver to see their stats!');
   });
 
@@ -32,5 +32,15 @@ describe('Driver Stats Page', () => {
   it('should allow the user to click on a different driver and display that driver\'s information', () => {
     cy.get('#2').click()
     .get('.selected-driver').contains('Max was born 1997-09-30 in Hasselt, Belgium');
+  });
+
+  it('should present an error message in case of a failed fetch', () => {
+    cy.intercept('https://v1.formula-1.api-sports.io/drivers?name=Lewis%20Hamilton', {
+      body: {response: []}
+    })
+      .visit('http://localhost:3000/drivers');
+
+    cy.get('#1').click().get('.selected-driver').should('not.exist')
+      .get('.error').contains('Uh oh, red flag! We could not find that driver. Please try again later!');
   });
 });

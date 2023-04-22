@@ -39,3 +39,11 @@ ul {
 .material-symbols-outlined {
   cursor: pointer;
 }
+
+.error {
+  color: #e00400;
+  text-shadow: 1px 1px 0px black;
+  font-size: 25pt;
+  text-align: center;
+  margin: 10%;
+}
