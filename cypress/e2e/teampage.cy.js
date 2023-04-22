@@ -83,7 +83,8 @@ describe('Naming Team and Getting Results Path', () => {
   })
 
   it('should allow the user to change the team name', () => {
-    cy.get('.edit').click()
+    cy.get('.team-header').contains('Give Your Team A Name!')
+      .get('.edit').click()
       .get('.edit-mode').should('exist')
       .get('.name-input').click().type('Ham Sandwich').get('.name-submit').click()
       .get('.team-header').contains('Ham Sandwich');

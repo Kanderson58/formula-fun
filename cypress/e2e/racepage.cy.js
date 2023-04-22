@@ -25,14 +25,15 @@ describe('Home/Instructional Page', () => {
     cy.get('nav > [href="/team"]').click().get('.default-driver').should('exist')
       .url('http://localhost:3000/team');
     cy.get('[href="/drivers"]').click().get('.full-rankings').should('exist')
-      .url('http://localhost:3000/drivers');;
+      .url('http://localhost:3000/drivers');
   });
 
   it('should allow the user to click anywhere on the grey header to get back to the home page', () => {
     cy.get('nav > [href="/team"]').click()
+      .url('http://localhost:3000/team')
       .get('.title').click()
       .get('.formula-fun').contains('Welcome to Formula Fun!')
-      .url('http://localhost:3000/');;
+      .url('http://localhost:3000/');
   });
 
   it('should not allow a user to access their results before they have chosen a team', () => {
