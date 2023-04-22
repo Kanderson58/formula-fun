@@ -12,13 +12,13 @@ const Driver = ({setError, chosenDriver}) => {
     {driverInfo.worldChamp > 1 && ` He is a World Champion, winning the championship ${driverInfo.worldChamp} times. `}</p>
 
   useEffect(() => {
-    async function fetchData () {
-      const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
-      typeof(singleDriver) === 'string' ? setError('🚩 Uh oh, red flag!  We could not find that driver.  Please try again later! 🚩') : setDriverInfo(singleDriver);
-    }
-    fetchData();
+    // async function fetchData () {
+    //   const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
+    //   typeof(singleDriver) === 'string' ? setError('🚩 Uh oh, red flag!  We could not find that driver.  Please try again later! 🚩') : setDriverInfo(singleDriver);
+    // }
+    // fetchData();
 
-    // setDriverInfo(cleanSingleDriver(chosenDriver.name)[0]);
+    setDriverInfo(cleanSingleDriver(chosenDriver.name)[0]);
   }, [chosenDriver])
 
   return (
