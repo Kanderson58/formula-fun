@@ -50,6 +50,7 @@ const App = () => {
             /> 
           </Route>
           <Route path='/drivers'> <DriversPage allDrivers={allDrivers} /> </Route>
+          <Route path='*'><p className='error'>No such page exists!</p></Route>
         </Switch>
       </main>
     </div>
