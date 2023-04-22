@@ -14,10 +14,14 @@ const App = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    setAllDrivers(cleanDriverData());
-    // cleanDriverData().then(data => { 
-    //   typeof(data) === 'array' ? setAllDrivers(data) : setError(data);
-    // });
+    // setAllDrivers(cleanDriverData());
+    
+    const promise = cleanDriverData();
+    if(typeof(promise) === 'string') {
+      setError(promise);
+    } else {
+      promise.then(data =>setAllDrivers(data));
+    }
   }, []);
 
   return (

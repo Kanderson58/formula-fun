@@ -39,4 +39,15 @@ describe('Home/Instructional Page', () => {
   it('should direct users to a team building page', () => {
     cy.get('.see-team').click().get('select').contains('Choose Your Driver...');
   });
+
+  it('should display an error message for a failed API call', () => {
+    cy.intercept('https://v1.formula-1.api-sports.io/rankings/drivers?season=2021', {
+      statusCode: 404
+    })
+      .visit('http://localhost:3000/');
+
+    cy.get('.error').contains('Into the pit lane! There was an error displaying your page. Please check back later!');
+
+    cy.get('.foruma-fun').should('not.exist');
+  });
 });
