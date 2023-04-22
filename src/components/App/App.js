@@ -15,13 +15,13 @@ const App = () => {
 
   useEffect(() => {
     // setAllDrivers(cleanDriverData());
-    
-    const promise = cleanDriverData();
-    if(typeof(promise) === 'string') {
-      setError(promise);
-    } else {
-      promise.then(data =>setAllDrivers(data));
-    }
+    cleanDriverData().then(data => {
+      if(typeof(data) === 'string') {
+        setError(data);
+      } else {
+        setAllDrivers(data);
+      }
+    });
   }, []);
 
   return (

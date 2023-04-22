@@ -15,7 +15,7 @@ describe('Driver Stats Page', () => {
       .visit('http://localhost:3000/drivers')
   });
 
-  it('should not display a driver until one is clicked on', () => {
+  it('should instruct a viewer to select a driver to view', () => {
     cy.get('.selected-driver').contains('Click on a driver to see their stats!');
   });
 
