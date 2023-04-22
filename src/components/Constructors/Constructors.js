@@ -9,6 +9,7 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
   const [constructorRanking, setConstructorRanking] = useState([]);
   const [teamPoints, setTeamPoints] = useState(0);
   const [results, setResults] = useState(false);
+  const [error, setError] = useState('');
 
   const rankings = constructorRanking
     .sort((a, b) => b.points - a.points)
@@ -18,7 +19,10 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
       </li>)
   
   useEffect(() => {
-    // cleanConstructors('rankings/teams?season=2021').then(data => setConstructorRanking(data));
+    // cleanConstructors('rankings/teams?season=2021').then(data => {
+    //   typeof(data) === 'array' ? setConstructorRanking(data) : setError(data);
+    // });
+
     setConstructorRanking(cleanConstructors());
     
     const combinedPoints = drivers.map(driver => allDrivers.find(driverObj => driverObj.name === driver.name).points);
@@ -26,20 +30,21 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
   }, []);
   
   const getRankings = () => {
-    if(constructorRanking.length === 10) {
+    if(constructorRanking.length === 10 && !error) {
       constructorRanking.push({points: teamPoints, team: teamName});
-    } else {
-      constructorRanking.find(rank => rank.points === teamPoints).team = teamName
-    }
+    } else if(!error) {
+      constructorRanking.find(rank => rank.points === teamPoints).team = teamName;
+    } 
     setResults(true);
   }
 
   return (
     <div className='constructors'>
       {!results && <button className='get-results' onClick={getRankings}>Let's See {teamName}'s Results...</button>}
-      {results && <ul className='constructor-rankings'>
+      {results && !error && <ul className='constructor-rankings'>
         {rankings}
       </ul>}
+      {error && <p className='error'>{error}</p>}
     </div>
   )
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cleanSingleDriver } from '../../utilities';
 import './Driver.css';
 
-const Driver = ({chosenDriver}) => {
+const Driver = ({setError, chosenDriver}) => {
   const [driverInfo, setDriverInfo] = useState({});
   const driverDescription = <p className='blurb'>
     {driverInfo.firstName} was born {driverInfo.birthday && driverInfo.birthday}{driverInfo.birthplace && ` in ${driverInfo.birthplace}`}{driverInfo.country ? `, and drives for the ${driverInfo.country}.` : '.'}
@@ -14,7 +14,7 @@ const Driver = ({chosenDriver}) => {
   useEffect(() => {
     // async function fetchData () {
     //   const singleDriver = await cleanSingleDriver(chosenDriver.name).then(driver => driver[0]);
-    //   setDriverInfo(singleDriver);
+    //   typeof(singleDriver) === 'string' ? setError('🚩 Uh oh, red flag!  We could not find that driver.  Please try again later! 🚩') : setDriverInfo(singleDriver);
     // }
     // fetchData();
 
@@ -43,4 +43,7 @@ const Driver = ({chosenDriver}) => {
 
 export default Driver;
 
-Driver.propTypes = { chosenDriver: PropTypes.object };
+Driver.propTypes = { 
+  setError: PropTypes.func,
+  chosenDriver: PropTypes.object 
+};

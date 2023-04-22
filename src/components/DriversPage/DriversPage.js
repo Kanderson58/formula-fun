@@ -5,6 +5,7 @@ import './DriversPage.css';
 
 const DriversPage = ({allDrivers}) => {
   const [chosenDriver, setChosenDriver] = useState();
+  const [error, setError] = useState();
 
   const allDriversJSX = allDrivers.map(driver => 
     <div className={`ranked-driver ${chosenDriver === driver.position && 'chosen-driver'}`} 
@@ -23,7 +24,9 @@ const DriversPage = ({allDrivers}) => {
         <h3>SEASON RANKINGS</h3>
         {allDriversJSX}
       </div>
-      {chosenDriver ? <Driver chosenDriver={allDrivers.find(driver => driver.position === chosenDriver)}/> : <p className='selected-driver no-driver'>Click on a driver <br/> to see their stats!</p>}
+      {chosenDriver && !error && <Driver setError={setError} chosenDriver={allDrivers.find(driver => driver.position === chosenDriver)}/>}
+      {!chosenDriver && !error && <p className='selected-driver no-driver'>Click on a driver <br/> to see their stats!</p>}
+      {error && <p className='error'>{error}</p>}
     </section>
   )
 }
