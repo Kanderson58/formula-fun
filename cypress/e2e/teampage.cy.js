@@ -38,6 +38,19 @@ describe('Chosing Drivers Path', () => {
       .get('select').select('Max Verstappen').get('.submit-driver').click()
       .get('.team-header').should('exist');
   });
+
+  it('should present an error message in case of a failed fetch', () => {
+    cy.intercept('https://v1.formula-1.api-sports.io/drivers?name=Lewis%20Hamilton', {
+      body: {response: []}
+    })
+      .visit('http://localhost:3000/team');
+
+    cy.get('.driver-select').contains('Pick your driver:')
+      .get('select').select('Lewis Hamilton')
+      .get('.submit-driver').click()
+      .get('.error').contains('Uh oh, red flag! We could not find that driver. Please try again later!')
+      .get('.driver-select').should('not.exist');
+  });
 });
 
 describe('Naming Team and Getting Results Path', () => {
