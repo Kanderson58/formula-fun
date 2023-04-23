@@ -27,7 +27,7 @@ const DefaultDriver = ({setError, allDrivers, drivers, setDrivers}) => {
     <div className='default-driver'>
       <img src={defaultdriver} className='driver-img' alt='example driver'/>
       <div className='driver-select'>
-        Pick your driver:
+        {!drivers.length ? 'Pick your first driver:' : 'Pick your second driver:'}
         <select defaultValue='default' onChange={() => setButtonText('Sign my driver!')}>
           <option value='default' defaultValue='default' disabled>Choose Your Driver...</option>
           {availableDrivers}

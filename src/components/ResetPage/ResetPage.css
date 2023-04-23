@@ -3,11 +3,17 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 15%;
 }
 
 .reset-blurb {
+  margin: 10%;
+  margin-bottom: none;
   font-size: 20pt;
+}
+
+.new-team {
+  width: 400px;
+  padding: 2% 0;
 }
 
 @media screen and (max-width: 950px) {

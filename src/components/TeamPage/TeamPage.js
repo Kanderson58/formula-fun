@@ -5,7 +5,7 @@ import DefaultDriver from '../DefaultDriver/DefaultDriver';
 import Constructors from '../Constructors/Constructors';
 import './TeamPage.css';
 
-const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
+const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName, resetTeam}) => {
   const [editMode, setEditMode] = useState(false);
   const [error, setError] = useState('');
 
@@ -55,7 +55,7 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
             <input type='submit' className='name-submit' onClick={(e) => submitTeamName(e)} />
           </div>}
 
-          {teamName && !editMode && <Constructors allDrivers={allDrivers} drivers={drivers} teamName={teamName} editMode={editMode} />}
+          {teamName && !editMode && <Constructors allDrivers={allDrivers} drivers={drivers} teamName={teamName} editMode={editMode} resetTeam={resetTeam} />}
         </div>
       </div>}
     </section>
@@ -69,5 +69,6 @@ TeamPage.propTypes = {
   drivers: PropTypes.array, 
   setDrivers: PropTypes.func, 
   teamName: PropTypes.string, 
-  setTeamName: PropTypes.func
+  setTeamName: PropTypes.func,
+  resetTeam: PropTypes.func
 };
