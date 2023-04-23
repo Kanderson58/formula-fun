@@ -20,7 +20,7 @@ const Driver = ({setError, chosenDriver}) => {
   }, [chosenDriver, setError])
 
   return (
-    <div className={`selected-driver ${driverInfo.name}`} tabIndex='0'>
+    <div className={`selected-driver ${driverInfo.name}`} tabIndex='0' >
       {driverInfo.name && <ul className='driver-info'>
         {driverInfo.name} <span className='number'>#{driverInfo.number}</span>
         {driverDescription}

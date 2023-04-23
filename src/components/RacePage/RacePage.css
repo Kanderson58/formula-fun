@@ -34,15 +34,15 @@
 }
 
 .racecar {
-  margin-left: -800px;
+  margin-left: -1000px;
   height: 100px;
   margin: none;
-  animation: slide 6s linear infinite;
+  animation: slide 7s linear infinite;
 }
 
 @keyframes slide {
   100% {
-    transform: translate(2200px);
+    transform: translate(2400px);
   }
 }
 

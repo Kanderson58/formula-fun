@@ -15,7 +15,6 @@ const DriversPage = ({allDrivers}) => {
       tabIndex='0'
       >
         <p className='pointer-event'>{driver.position}) {driver.name}</p><p className='pointer-event points'> {driver.points} points</p>
-        {chosenDriver === driver.position && <span className="material-symbols-outlined driver-arrow pointer-event">arrow_circle_right</span>}
     </div>);
 
   return (
