@@ -1,5 +1,4 @@
 import { getData } from "./apiCalls";
-import { sampleCleanedDrivers, sampleConstructor, sampleSingleDriver1 } from "./sampleData";
 
 export const cleanDriverData = () => {
   return getData('rankings/drivers?season=2021').then(data => {
@@ -10,12 +9,11 @@ export const cleanDriverData = () => {
           position: driver.position,
           points: driver.points ? driver.points : 0
         }
-      })
+      });
     } else {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
   });
-  // return sampleCleanedDrivers
 }
 
 export const cleanSingleDriver = (name) => {
@@ -27,7 +25,6 @@ export const cleanSingleDriver = (name) => {
           firstName: driver.name.substring(0, driver.name.indexOf(' ')),
           image: driver.image,
           number: driver.number,
-          team: driver.teams[1].team.name,
           careerPoints: driver.career_points,
           birthday: driver.birthdate,
           birthplace: driver.birthplace,
@@ -39,12 +36,11 @@ export const cleanSingleDriver = (name) => {
           numHighest: driver.highest_race_finish.number,
           worldChamp: driver.world_championships
         }
-      })
+      });
     } else {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
   });
-  // return sampleSingleDriver1;
 }
 
 export const cleanConstructors = (year) => {
@@ -56,10 +52,9 @@ export const cleanConstructors = (year) => {
           points: team.points,
           logo: team.team.logo
         }
-      })
+      });
     } else {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
   });
-  // return sampleConstructor;
 }

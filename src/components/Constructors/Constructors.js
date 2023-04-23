@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getData } from '../../apiCalls';
 import './Constructors.css'
 import { cleanConstructors } from '../../utilities';
 import racecar from '../../images/racecar.gif';
@@ -26,11 +25,9 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
       promise.then(data => setConstructorRanking(data));
     }
 
-    // setConstructorRanking(cleanConstructors());
-    
     const combinedPoints = drivers.map(driver => allDrivers.find(driverObj => driverObj.name === driver.name).points);
     setTeamPoints(parseInt(combinedPoints[0]) + parseInt(combinedPoints[1]));
-  }, []);
+  }, [drivers, allDrivers]);
   
   const getRankings = () => {
     if(constructorRanking.length === 10 && !error) {

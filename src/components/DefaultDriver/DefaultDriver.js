@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import defaultdriver from '../../images/defaultdriver.jpeg';
-import './DefaultDriver.css';
 import { cleanSingleDriver } from '../../utilities';
+import './DefaultDriver.css';
 
 const DefaultDriver = ({setError, allDrivers, drivers, setDrivers}) => {
   const [buttonText, setButtonText] = useState('Sign my driver!');
@@ -13,16 +13,13 @@ const DefaultDriver = ({setError, allDrivers, drivers, setDrivers}) => {
 
   const checkInput = (driver) => {
     if(driver !== 'default') {      
-      // const driverData = cleanSingleDriver()[0];
-      // setDrivers([...drivers, driverData]);
-
       async function fetchData () {
         const singleDriver = await cleanSingleDriver(driver).then(driver => driver[0]);
-        typeof(singleDriver) === 'string' ? setError('🚩 Uh oh, red flag!  We could not find that driver.  Please try again later! 🚩') : setDrivers([...drivers, singleDriver])
+        typeof(singleDriver) === 'string' ? setError('🚩 Uh oh, red flag!  We could not find that driver.  Please try again later! 🚩') : setDrivers([...drivers, singleDriver]);
       }
       fetchData();
     } else { 
-      setButtonText('Please choose a driver!')
+      setButtonText('Please choose a driver!');
     };
   }
 

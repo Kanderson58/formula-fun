@@ -12,7 +12,7 @@ describe('Driver Stats Page', () => {
       .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
         fixture: 'teams2021.json'
       })
-      .visit('http://localhost:3000/drivers')
+      .visit('http://localhost:3000/drivers');
   });
 
   it('should instruct a viewer to select a driver to view', () => {

@@ -22,7 +22,6 @@ const App = () => {
         setAllDrivers(data);
       }
     });
-    // setAllDrivers(cleanDriverData());
   }, []);
 
   const resetTeam = () => {
