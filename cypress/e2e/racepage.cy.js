@@ -54,6 +54,11 @@ describe('Home/Instructional Page', () => {
 
     cy.get('.foruma-fun').should('not.exist');
   });
+
+  it('should show users an error message if they navigate to a bad URL', () => {
+    cy.visit('http://localhost:3000/badURL')
+      .get('.error').contains('No such page exists!');
+  });
 });
 
 describe('Reset Page', () => {
