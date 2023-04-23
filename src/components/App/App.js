@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import RacePage from '../RacePage/RacePage';
 import TeamPage from '../TeamPage/TeamPage';
 import DriversPage from '../DriversPage/DriversPage';
+import ResetPage from '../ResetPage/ResetPage';
 
 const App = () => {
   const [allDrivers, setAllDrivers] = useState([]);
@@ -14,7 +15,6 @@ const App = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // setAllDrivers(cleanDriverData());
     cleanDriverData().then(data => {
       if(typeof(data) === 'string') {
         setError(data);
@@ -22,7 +22,13 @@ const App = () => {
         setAllDrivers(data);
       }
     });
+    // setAllDrivers(cleanDriverData());
   }, []);
+
+  const resetTeam = () => {
+    setDrivers([]);
+    setTeamName('');
+  }
 
   return (
     <div>
@@ -31,6 +37,7 @@ const App = () => {
         <Switch>
           <Route exact path='/'> 
             {drivers.length !== 2 && !error && <RacePage />}
+            {drivers.length === 2 && !error && <ResetPage resetTeam={resetTeam} />}
             {error && <p className='error'>{error}</p>}
           </Route>
           <Route path='/team'> 
@@ -43,6 +50,7 @@ const App = () => {
             /> 
           </Route>
           <Route path='/drivers'> <DriversPage allDrivers={allDrivers} /> </Route>
+          <Route path='*'><p className='error'>No such page exists!</p></Route>
         </Switch>
       </main>
     </div>

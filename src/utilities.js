@@ -15,7 +15,7 @@ export const cleanDriverData = () => {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
   });
-  return sampleCleanedDrivers
+  // return sampleCleanedDrivers
 }
 
 export const cleanSingleDriver = (name) => {
@@ -44,7 +44,7 @@ export const cleanSingleDriver = (name) => {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
   });
-  return sampleSingleDriver1;
+  // return sampleSingleDriver1;
 }
 
 export const cleanConstructors = (year) => {
@@ -61,5 +61,5 @@ export const cleanConstructors = (year) => {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
   });
-  return sampleConstructor;
+  // return sampleConstructor;
 }
