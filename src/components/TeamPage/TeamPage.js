@@ -18,7 +18,7 @@ const TeamPage = ({allDrivers, drivers, setDrivers, teamName, setTeamName}) => {
   }
 
   const editNameEnter = (e) => {
-    return e.keyCode === 13 ? setEditMode(true) : null
+    return e.keyCode === 13 ? setEditMode(true) : null;
   }
   
   const submitTeamName = (e) => {

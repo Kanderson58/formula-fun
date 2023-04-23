@@ -6,7 +6,7 @@ import './Header.css'
 
 const Header = ({path}) => {
   const [selected, setSelected] = useState(path);
-  const expand = <span className="material-symbols-outlined expand">expand_more</span>
+  const expand = <span className="material-symbols-outlined expand">expand_more</span>;
 
   useEffect(() => {
     setSelected(path);

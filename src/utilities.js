@@ -9,7 +9,7 @@ export const cleanDriverData = () => {
           position: driver.position,
           points: driver.points ? driver.points : 0
         }
-      })
+      });
     } else {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
@@ -36,7 +36,7 @@ export const cleanSingleDriver = (name) => {
           numHighest: driver.highest_race_finish.number,
           worldChamp: driver.world_championships
         }
-      })
+      });
     } else {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
@@ -52,7 +52,7 @@ export const cleanConstructors = (year) => {
           points: team.points,
           logo: team.team.logo
         }
-      })
+      });
     } else {
       return `Into the pit lane!  There was an error displaying your page.  Please check back later!`;
     }
