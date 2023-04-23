@@ -55,3 +55,31 @@ describe('Home/Instructional Page', () => {
     cy.get('.foruma-fun').should('not.exist');
   });
 });
+
+describe('Reset Page', () => {
+  beforeEach('', () => {
+    cy.intercept('https://v1.formula-1.api-sports.io/rankings/drivers?season=2021', {
+      fixture: 'allDrivers.json'
+    })
+      .intercept('https://v1.formula-1.api-sports.io/drivers?name=Lewis%20Hamilton', {
+        fixture: 'lewis.json'
+      })
+      .intercept('https://v1.formula-1.api-sports.io/drivers?name=Max%20Verstappen', {
+        fixture: 'max.json'
+      })
+      .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
+        fixture: 'teams2021.json'
+      })
+      .visit('http://localhost:3000/')
+  });
+
+  it('should allow user to reset the page to choose new drivers', () => {
+    cy.get('.see-team').click().get('select').select('Lewis Hamilton').get('.submit-driver').click()
+      .get('select').select('Max Verstappen').get('.submit-driver').click()
+      .get('.title').click()
+      .get('.reset').should('exist')
+      .get('.see-team').click().get('nav > [href="/team"]').click()
+      .get('.default-driver').should('exist')
+      .get('.selected-driver').should('not.exist');
+  });
+});

@@ -15,14 +15,14 @@ const App = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    setAllDrivers(cleanDriverData());
-    // cleanDriverData().then(data => {
-    //   if(typeof(data) === 'string') {
-    //     setError(data);
-    //   } else {
-    //     setAllDrivers(data);
-    //   }
-    // });
+    cleanDriverData().then(data => {
+      if(typeof(data) === 'string') {
+        setError(data);
+      } else {
+        setAllDrivers(data);
+      }
+    });
+    // setAllDrivers(cleanDriverData());
   }, []);
 
   const resetTeam = () => {
