@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/formula-fun/static/css/main.7b0dd149.css",
-    "main.js": "/formula-fun/static/js/main.dba287cb.js",
-    "static/media/racecar.gif": "/formula-fun/static/media/racecar.ba0b5c1b8574a03f732b.gif",
-    "static/media/checkeredflag.png": "/formula-fun/static/media/checkeredflag.9579fbcfb36ea91d3f74.png",
-    "index.html": "/formula-fun/index.html",
-    "main.7b0dd149.css.map": "/formula-fun/static/css/main.7b0dd149.css.map",
-    "main.dba287cb.js.map": "/formula-fun/static/js/main.dba287cb.js.map"
+    "main.css": "/static/css/main.5f393745.css",
+    "main.js": "/static/js/main.5100610e.js",
+    "static/media/racecar.gif": "/static/media/racecar.ba0b5c1b8574a03f732b.gif",
+    "static/media/checkeredflag.png": "/static/media/checkeredflag.9579fbcfb36ea91d3f74.png",
+    "index.html": "/index.html",
+    "main.5f393745.css.map": "/static/css/main.5f393745.css.map",
+    "main.5100610e.js.map": "/static/js/main.5100610e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7b0dd149.css",
-    "static/js/main.dba287cb.js"
+    "static/css/main.5f393745.css",
+    "static/js/main.5100610e.js"
   ]
 }
