@@ -12,7 +12,7 @@ describe('Home/Instructional Page', () => {
       .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
         fixture: 'teams2021.json'
       })
-      .visit('http://localhost:3000/')
+      .visit('http://localhost:3000/');
   });
 
   it('starts the user on an instruction page', () => {
@@ -75,7 +75,7 @@ describe('Reset Page', () => {
       .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
         fixture: 'teams2021.json'
       })
-      .visit('http://localhost:3000/')
+      .visit('http://localhost:3000/');
   });
 
   it('should allow user to reset the page to choose new drivers', () => {

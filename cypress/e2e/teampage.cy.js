@@ -12,7 +12,7 @@ describe('Chosing Drivers Path', () => {
       .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
         fixture: 'teams2021.json'
       })
-      .visit('http://localhost:3000/team')
+      .visit('http://localhost:3000/team');
   });
 
   it('should ask the user to choose one driver at a time', () => {
@@ -67,10 +67,10 @@ describe('Naming Team and Getting Results Path', () => {
       .intercept('https://v1.formula-1.api-sports.io/rankings/teams?season=2021', {
         fixture: 'teams2021.json'
       })
-      .visit('http://localhost:3000/team')
+      .visit('http://localhost:3000/team');
 
     cy.get('select').select('Lewis Hamilton').get('.submit-driver').click()
-      .get('select').select('Max Verstappen').get('.submit-driver').click()
+      .get('select').select('Max Verstappen').get('.submit-driver').click();
   });
 
   it('should display the information for both drivers', () => {
