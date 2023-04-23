@@ -16,7 +16,7 @@ describe('Chosing Drivers Path', () => {
   });
 
   it('should ask the user to choose one driver at a time', () => {
-    cy.get('.driver-select').contains('Pick your driver:')
+    cy.get('.driver-select').contains('Pick your first driver:')
       .get('select').select('Lewis Hamilton')
       .get('.submit-driver').click()
       .get('.driver-select').should('exist');
@@ -45,7 +45,7 @@ describe('Chosing Drivers Path', () => {
     })
       .visit('http://localhost:3000/team');
 
-    cy.get('.driver-select').contains('Pick your driver:')
+    cy.get('.driver-select').contains('Pick your first driver:')
       .get('select').select('Lewis Hamilton')
       .get('.submit-driver').click()
       .get('.error').contains('Uh oh, red flag! We could not find that driver. Please try again later!')
