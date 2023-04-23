@@ -19,15 +19,13 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
       </li>)
   
   useEffect(() => {
-    // const promise = cleanConstructors('rankings/teams?season=2021')
-    // if(typeof(promise) === 'string') {
-    //   setError(promise);
-    // } else {
-    //   promise.then(data => setConstructorRanking(data));
-    // }
+    const promise = cleanConstructors('rankings/teams?season=2021')
+    if(typeof(promise) === 'string') {
+      setError(promise);
+    } else {
+      promise.then(data => setConstructorRanking(data));
+    }
 
-    setConstructorRanking(cleanConstructors());
-    
     const combinedPoints = drivers.map(driver => allDrivers.find(driverObj => driverObj.name === driver.name).points);
     setTeamPoints(parseInt(combinedPoints[0]) + parseInt(combinedPoints[1]));
   }, []);
