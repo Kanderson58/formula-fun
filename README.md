@@ -33,7 +33,7 @@ For all the Formula One fans with favorite drivers who drive for different teams
 
 ## Deployed Page
 
-Visit the [deployed page]() to start building your F1 team!
+Visit the [deployed page](https://formula-fun-two.vercel.app/) to start building your F1 team!
 
 ## Wins
 - Being able to implement a fully accessible, mouse-free navigatable, screen reader capable app that can truly be used by anyone.
