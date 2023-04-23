@@ -27,7 +27,7 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
 
     const combinedPoints = drivers.map(driver => allDrivers.find(driverObj => driverObj.name === driver.name).points);
     setTeamPoints(parseInt(combinedPoints[0]) + parseInt(combinedPoints[1]));
-  }, [drivers, allDrivers]);
+  }, [drivers, allDrivers, teamName]);
   
   const getRankings = () => {
     if(constructorRanking.length === 10 && !error) {
