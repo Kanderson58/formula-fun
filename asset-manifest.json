@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/formula-fun/static/css/main.7b0dd149.css",
-    "main.js": "/formula-fun/static/js/main.e9216ac3.js",
+    "main.js": "/formula-fun/static/js/main.09e9d841.js",
     "static/media/racecar.gif": "/formula-fun/static/media/racecar.ba0b5c1b8574a03f732b.gif",
     "static/media/checkeredflag.png": "/formula-fun/static/media/checkeredflag.9579fbcfb36ea91d3f74.png",
     "index.html": "/formula-fun/index.html",
     "main.7b0dd149.css.map": "/formula-fun/static/css/main.7b0dd149.css.map",
-    "main.e9216ac3.js.map": "/formula-fun/static/js/main.e9216ac3.js.map"
+    "main.09e9d841.js.map": "/formula-fun/static/js/main.09e9d841.js.map"
   },
   "entrypoints": [
     "static/css/main.7b0dd149.css",
-    "static/js/main.e9216ac3.js"
+    "static/js/main.09e9d841.js"
   ]
 }
