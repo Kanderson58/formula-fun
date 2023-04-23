@@ -9,3 +9,10 @@
 .reset-blurb {
   font-size: 20pt;
 }
+
+@media screen and (max-width: 950px) {
+  .reset-blurb {
+    margin-top: 15%;
+    font-size: 15pt;
+  }
+}
