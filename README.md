@@ -29,7 +29,7 @@ For all the Formula One fans with favorite drivers who drive for different teams
   - [Kara Anderson](https://github.com/Kanderson58)
 
 ## Illustrations 
-
+![Demo](https://user-images.githubusercontent.com/114871395/233849014-229e2fe4-afd7-489f-8d1e-eaac544df7ad.gif)
 
 ## Deployed Page
 
