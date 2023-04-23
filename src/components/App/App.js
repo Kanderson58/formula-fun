@@ -36,7 +36,7 @@ const App = () => {
         <Switch>
           <Route exact path='/'> 
             {drivers.length !== 2 && !error && <RacePage />}
-            {drivers.length === 2 && !error && <ResetPage resetTeam={resetTeam} />}
+            {drivers.length === 2 && !error && <ResetPage resetTeam={resetTeam} constructor={false} />}
             {error && <p className='error'>{error}</p>}
           </Route>
           <Route path='/team'> 
@@ -46,6 +46,7 @@ const App = () => {
               setDrivers={setDrivers} 
               teamName={teamName}
               setTeamName={setTeamName}
+              resetTeam={resetTeam}
             /> 
           </Route>
           <Route path='/drivers'> <DriversPage allDrivers={allDrivers} /> </Route>

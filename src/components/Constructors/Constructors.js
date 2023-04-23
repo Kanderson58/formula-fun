@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import './Constructors.css'
+import ResetPage from '../ResetPage/ResetPage';
 import { cleanConstructors } from '../../utilities';
 import racecar from '../../images/racecar.gif';
+import './Constructors.css';
 
-const Constructors = ({allDrivers, drivers, teamName}) => {
+const Constructors = ({allDrivers, drivers, teamName, resetTeam}) => {
   const [constructorRanking, setConstructorRanking] = useState([]);
   const [teamPoints, setTeamPoints] = useState(0);
   const [results, setResults] = useState(false);
@@ -44,6 +45,7 @@ const Constructors = ({allDrivers, drivers, teamName}) => {
       {results && !error && <ul className='constructor-rankings'>
         {rankings}
       </ul>}
+      {results && !error && <ResetPage resetTeam={resetTeam} constructor={true}/>}
       {error && <p className='error'>{error}</p>}
     </div>
   )
@@ -54,5 +56,6 @@ export default Constructors;
 Constructors.propTypes = {
   allDrivers: PropTypes.array,
   drivers: PropTypes.array,
-  teamName: PropTypes.string
+  teamName: PropTypes.string,
+  resetTeam: PropTypes.func
 };
