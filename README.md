@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Formula Fun
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+  - [Introduction](#Introduction)
+  - [Technologies](#Technologies)
+  - [Contributors](#Contributors)
+  - [Illustrations](#Illustrations)
+  - [Deployed Page](#Deployed-Page)
+  - [Wins](#Wins)
+  - [Challenges & Improvements](#Challenges-&-Improvements)
+  - [Set Up](#Set-Up)
+  - [Sources](#Sources)
+  - [Project Spec](#Project-Spec)
 
-## Available Scripts
+## Introduction
+For all the Formula One fans with favorite drivers who drive for different teams - now is your chance to make the team of your dreams and find out how they would perform!  No longer do you have to pick one uniform to root for - the sky is the limit with this responsive, accessible React app.  Pick from any of the drivers from the 2021 season, read through their overall career stats, and decide who you want to pair up to create the season winners.
 
-In the project directory, you can run:
+## Technologies
+  - React
+  - Router
+  - Cypress
+  - Javascript
+  - JSX
+  - Fetch API
+  - CSS
+  - HTML
 
-### `npm start`
+## Contributors
+  - [Kara Anderson](https://github.com/Kanderson58)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Illustrations 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Deployed Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Visit the [deployed page]() to start building your F1 team!
 
-### `npm run build`
+## Wins
+- Being able to implement a fully accessible, mouse-free navigatable, screen reader capable app that can truly be used by anyone.
+- Creating a beautifully responsive design that looks modern and inviting on every screen.
+- Providing seamless error handling that prevents most user errors before they even happen.
+- User tested to ensure quality before deployment.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges & Improvements
+- API limit - this app was developed with a 100 request per day limit.  In order to be as clean as possible, each call was strategically planned and created to be reusable, only fire when a user requests specific data, and allow page-to-page navigation without excessive or unnecessary fetches.
+- Error handling with an API that intercepts errors behind the scenes was a challenge.  This API tackles the errors and sends them back in an array with a message for the developer.  Translating this into something a user will understand and be able to navigate was challenging.  Clone this repo and try a fetch with a bad parameter to see how I was able to successfully error handle for these responses!
+- Async Javascript - for this project, I learned and implemented asynchronous fetches to allow the page to present data promtly to the user.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Set Up
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Fork this repo  
+2. Clone the repo to your local machine   
+3. Run `npm i`, then ` npm run build`, then `npm start`
+4. View the project in the browser by opening localhost:3000
 
-### `npm run eject`
+## Sources
+  - [MDN](http://developer.mozilla.org/en-US/)
+  - [W3Schools](https://www.w3schools.com/)
+  - [React Docs](https://reactjs.org/docs/getting-started.html)
+  - [Cypress Docs](https://docs.cypress.io/guides/overview/why-cypress.html)
+  - [API-Formula-1](https://api-sports.io/documentation/formula-1/v1)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Specs
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html).
